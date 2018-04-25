@@ -43,7 +43,7 @@ gulp.task('clean', () => del(['build/**', '!build'], { force: true }));
 gulp.task('default', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss'], 'watch']));
 
 gulp.task('watch', () => {
-  gulp.watch('./lib/**/*.js', ['default']);
-  gulp.watch('./lib/**/*.jsx', ['default']);
-  gulp.watch('./lib/**/*.scss', ['default']);
+  gulp.watch('./lib/**/*.js', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss']]));
+  gulp.watch('./lib/**/*.jsx', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss']]));
+  gulp.watch('./lib/**/*.scss', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss']]));
 });

@@ -6,8 +6,8 @@ import { Index, Button } from 'react-ui-framework';
 storiesOf('Buttons', module)
   .addDecorator(story => <Index>{story()}</Index>)
   .add('Primary button', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+    <Button onClick={action('clicked')}>Primary Button</Button>
   ))
   .add('Ghost button', () => (
-    <Button ghost onClick={action('clicked')}>Hello Button</Button>
+    <Button ghost onClick={action('clicked')}>Primary Ghost Button</Button>
   ));

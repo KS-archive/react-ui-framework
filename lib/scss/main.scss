@@ -1,2 +1,9 @@
 @import './reset';
 @import './variables';
+
+body {
+  font-family: var(--mainFont);
+  font-size: var(--font-md);
+  line-height: var(--font-md-lh);
+  font-weight: var(--normal);
+}

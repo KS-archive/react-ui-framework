@@ -37,6 +37,8 @@
   /* COLORS */
   --primary1: hsl(208, 100%, 40%);
   --primary2: hsl(208, 100%, 56%);
+  --primary2-hover: hsl(208, 100%, 64%);
+  --primary2-active: hsl(208, 100%, 48%);
   --primary3: hsl(208, 100%, 72%);
   --accent1: hsl(24, 100%, 48%);
   --accent2: hsl(24, 100%, 64%);
@@ -70,28 +72,33 @@
   --info: hsl(192, 100%, 56%);
 
   --background: hsl(209, 100%, 96%);
-  --overlay: hsla(0, 0%, 16%, 0.24);
+  --divider: hsl(0, 0%, 96%);
+  --overlay: hsla(0, 0%, 16%, 24%);
 
   /* TYPOGRAPHY */
   --mainFont: 'Roboto', 'Arial', sans-serif;
-  --normal: 300;
+  --normal: 400;
   --bold: 700;
 
   --font-xxl: 48px;
-  --font-xxl-lh: 1.166666;
+  --font-xxl-lh: 1.05;
 
   --font-xl: 32px;
   --font-xl-lh: 1.25;
 
   --font-lg: 24px;
-  --font-lg-lh: 1.333333;
+  --font-lg-lh: 1.25;
 
   --font-md: 16px;
-  --font-md-lh: 1.42;
+  --font-md-lh: 1.375;
 
   --font-sm: 14px;
-  --font-sm-lh: 1.5;
+  --font-sm-lh: 1;
 
   --font-xs: 12px;
-  --font-xs-lh: 1.5;
+  --font-xs-lh: 1;
+
+  /* TRANSITIONS */
+  --ease-in-out: cubic-bezier(.62, .28, .23, .99);
+  --ease-out: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
