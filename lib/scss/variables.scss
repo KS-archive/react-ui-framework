@@ -1,0 +1,97 @@
+:root {
+
+  /* SPACING */
+
+  --space-xs: 4px;
+  --space-sn: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 64px;
+
+
+  /* CONTAINER WIDTH */
+
+  --container-width: 1504px;
+
+  @media (max-width: 1599px) {
+    --container-width: 1120px;
+  }
+
+  @media (max-width: 1199px) {
+    --container-width: 936px;
+  }
+
+  @media (max-width: 959px) {
+    --container-width: 744px;
+  }
+
+  @media (max-width: 767px) {
+    --container-width: 464px;
+  }
+
+  @media (max-width: 479px) {
+    --container-width: calc(100% - 32px);
+  }
+
+  /* COLORS */
+  --primary1: hsl(208, 100%, 40%);
+  --primary2: hsl(208, 100%, 56%);
+  --primary3: hsl(208, 100%, 72%);
+  --accent1: hsl(24, 100%, 48%);
+  --accent2: hsl(24, 100%, 64%);
+
+  // XXX
+  // --primary1: hsl(213%, 96%, 11%);
+  // --primary2: hsl(208%, 57%, 21%);
+  // --primary3: hsl(216%, 39%, 28%);
+  // --accent1: hsl(40%, 100%, 67%);
+  // --accent2: hsl(42%, 53%, 71%);
+
+  // --primary1: hsl(10%, 94%, 60%);
+  // --primary2: hsl(28%, 83%, 61%);
+  // --primary3: hsl(216%, 39%, 28%);
+  // --accent1: hsl(211%, 87%, 25%);
+  // --accent2: hsl(60%, 38%, 87%);
+
+  // --primary1: hsl(10%, 94%, 60%);
+  // --primary2: hsl(28%, 83%, 61%);
+  // --primary3: hsl(216%, 39%, 28%);
+  // --accent1: hsl(211%, 87%, 25%);
+  // --accent2: hsl(60%, 38%, 87%);
+
+  --grey1: hsl(0, 0%, 16%);
+  --grey2: hsl(0, 0%, 32%);
+  --grey3: hsl(0, 0%, 48%);
+
+  --success: hsl(144, 100%, 56%);
+  --error: hsl(0, 100%, 56%);
+  --warning: hsl(40, 100%, 56%);
+  --info: hsl(192, 100%, 56%);
+
+  --background: hsl(209, 100%, 96%);
+  --overlay: hsla(0, 0%, 16%, 0.24);
+
+  /* TYPOGRAPHY */
+  --mainFont: 'Roboto', 'Arial', sans-serif;
+  --normal: 300;
+  --bold: 700;
+
+  --font-xxl: 48px;
+  --font-xxl-lh: 1.166666;
+
+  --font-xl: 32px;
+  --font-xl-lh: 1.25;
+
+  --font-lg: 24px;
+  --font-lg-lh: 1.333333;
+
+  --font-md: 16px;
+  --font-md-lh: 1.42;
+
+  --font-sm: 14px;
+  --font-sm-lh: 1.5;
+
+  --font-xs: 12px;
+  --font-xs-lh: 1.5;
+}
