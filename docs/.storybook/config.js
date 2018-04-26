@@ -1,8 +1,9 @@
 import { configure } from '@storybook/react';
 
 function loadStories() {
-  require('../stories/Button');
-  require('../stories/Grid');
+  require('../stories/layout/Grid');
+  require('../stories/general/Button');
+  require('../stories/dataDisplay/Tooltip');
 }
 
 configure(loadStories, module);

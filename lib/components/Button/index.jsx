@@ -61,8 +61,8 @@ const Filled = ButtonBase.extend`
   }
 `;
 
-export default ({ children, ghost, className, onClick }) => {
-  const Component = ghost ? Ghost : Filled;
-  return <Component className={className} onClick={onClick}>{children}</Component>;
+export default (props) => {
+  const Component = props.ghost ? Ghost : Filled;
+  return <Component {...props}>{props.children}</Component>;
 };
 

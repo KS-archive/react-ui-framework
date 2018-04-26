@@ -11,9 +11,9 @@ const style = {
   height: 48,
 };
 
-storiesOf('Grid', module)
+storiesOf('Layout', module)
   .addDecorator(story => <Index>{story()}</Index>)
-  .add('Grid container', () => (
+  .add('Grid', () => (
     <div style={{ width: '100%', padding: 32 }}>
       <Grid>
         <GridItem item xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={{ ...style, backgroundColor: '#f44336' }}>1</GridItem>
