@@ -38,11 +38,13 @@ const Ghost = ButtonBase.extend`
   &:hover {
     color: var(--primary2-hover);
     border: 2px solid var(--primary2-hover);
+    background-color: rgba(255, 255, 255, 0.02);
   }
 
   &:active {
     color: var(--primary2-active);
     border: 2px solid var(--primary2-active);
+    background-color: rgba(0, 0, 0, 0.02);
   }
 `;
 

@@ -13,7 +13,7 @@ const babelConfig = {
     '@babel/preset-stage-0',
   ],
   plugins: [
-    'transform-decorators-legacy',
+    'transform-class-properties',
     '@babel/plugin-syntax-dynamic-import',
     'babel-plugin-styled-components',
     '@babel/plugin-transform-react-inline-elements',
@@ -43,7 +43,7 @@ gulp.task('clean', () => del(['build/**', '!build'], { force: true }));
 gulp.task('default', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss'], 'watch']));
 
 gulp.task('watch', () => {
-  gulp.watch('./lib/**/*.js', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss']]));
-  gulp.watch('./lib/**/*.jsx', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss']]));
-  gulp.watch('./lib/**/*.scss', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-scss']]));
+  gulp.watch('./lib/**/*.js', ['transpile-js']);
+  gulp.watch('./lib/**/*.jsx', ['transpile-jsx']);
+  gulp.watch('./lib/**/*.scss', ['transpile-scss']);
 });
