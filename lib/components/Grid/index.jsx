@@ -20,15 +20,18 @@ const isGridItem = ({ type }) => {
 export default class Grid extends PureComponent {
   constructor(props) {
     super(props);
-    this.startColumns = initializeStartColumns(sizes);
-    this.props.children.map(child => isGridItem(child) && this.modifyProps(child));
+    this.initializeGrid();
   }
 
   getDerivedStateFromProps(np) {
     if (np.dynamic) {
-      this.startColumns = initializeStartColumns(sizes);
-      this.props.children.map(child => isGridItem(child) && this.modifyProps(child));
+      this.initializeGrid();
     }
+  }
+
+  initializeGrid = () => {
+    this.startColumns = initializeStartColumns(sizes);
+    this.props.children.map(child => isGridItem(child) && this.modifyProps(child));
   }
 
   modifyProps = (child) => {
