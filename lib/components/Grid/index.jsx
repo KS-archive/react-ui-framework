@@ -33,10 +33,12 @@ export default class Grid extends PureComponent {
 
   modifyProps = (child) => {
     let lastSize = 1;
+    let lastOffset = 0;
     sizes.map((size) => {
       lastSize = child.props[size] || lastSize;
-      const sum = this.startColumns[size] + lastSize;
-      const [start, end] = (sum > 13) ? [1, 1 + lastSize] : [this.startColumns[size], sum];
+      lastOffset = child.props[`${size}-offset`] || lastOffset;
+      const sum = this.startColumns[size] + lastOffset + lastSize;
+      const [start, end] = (sum > 13) ? [1 + lastOffset, 1 + lastSize + lastOffset] : [this.startColumns[size] + lastOffset, sum];
       child.props[size] = `${start}/${end}`;
       this.startColumns[size] = end;
     });
