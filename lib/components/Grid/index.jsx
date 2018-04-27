@@ -23,7 +23,7 @@ export default class Grid extends PureComponent {
     this.initializeGrid();
   }
 
-  getDerivedStateFromProps(np) {
+  componentWillReceiveProps(np) {
     if (np.dynamic) {
       this.initializeGrid();
     }
