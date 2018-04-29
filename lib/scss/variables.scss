@@ -3,7 +3,7 @@
   /* SPACING */
 
   --space-xs: 4px;
-  --space-sn: 8px;
+  --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
@@ -50,27 +50,31 @@
   --accent2: hsl(24, 100%, 64%);
 
   // XXX
-  // --primary1: hsl(213%, 96%, 11%);
-  // --primary2: hsl(208%, 57%, 21%);
-  // --primary3: hsl(216%, 39%, 28%);
-  // --accent1: hsl(40%, 100%, 67%);
-  // --accent2: hsl(42%, 53%, 71%);
+  // --primary1: hsl(213, 96%, 11%);
+  // --primary2: hsl(208, 57%, 21%);
+  // --primary3: hsl(216, 39%, 28%);
+  // --accent1: hsl(40, 100%, 67%);
+  // --accent2: hsl(42, 53%, 71%);
 
-  // --primary1: hsl(10%, 94%, 60%);
-  // --primary2: hsl(28%, 83%, 61%);
-  // --primary3: hsl(216%, 39%, 28%);
-  // --accent1: hsl(211%, 87%, 25%);
-  // --accent2: hsl(60%, 38%, 87%);
+  // --primary1: hsl(10, 94%, 60%);
+  // --primary2: hsl(28, 83%, 61%);
+  // --primary3: hsl(216, 39%, 28%);
+  // --accent1: hsl(211, 87%, 25%);
+  // --accent2: hsl(60, 38%, 87%);
 
-  // --primary1: hsl(10%, 94%, 60%);
-  // --primary2: hsl(28%, 83%, 61%);
-  // --primary3: hsl(216%, 39%, 28%);
-  // --accent1: hsl(211%, 87%, 25%);
-  // --accent2: hsl(60%, 38%, 87%);
+  // --primary1: hsl(10, 94%, 60%);
+  // --primary2: hsl(28, 83%, 61%);
+  // --primary3: hsl(216, 39%, 28%);
+  // --accent1: hsl(211, 87%, 25%);
+  // --accent2: hsl(60, 38%, 87%);
 
   --grey1: hsl(0, 0%, 16%);
   --grey2: hsl(0, 0%, 32%);
   --grey3: hsl(0, 0%, 48%);
+
+  --white1: hsl(0, 0%, 80%);
+  --white2: hsl(0, 0%, 88%);
+  --white3: hsl(0, 0%, 96%);
 
   --success: hsl(144, 100%, 56%);
   --error: hsl(0, 100%, 56%);
@@ -78,7 +82,6 @@
   --info: hsl(192, 100%, 56%);
 
   --background: hsl(209, 100%, 96%);
-  --divider: hsl(0, 0%, 96%);
   --overlay: hsla(0, 0%, 16%, 24%);
 
   /* TYPOGRAPHY */

@@ -5,5 +5,5 @@ export default styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: var(--container-width);
+  width: ${props => props.fluid ? '100%;' : 'var(--container-width)'};
 `;
