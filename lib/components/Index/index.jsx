@@ -4,6 +4,8 @@ import 'react-tippy/dist/tippy.css';
 import { Container, Body } from './styles';
 import '../../styles.css';
 
+document.addEventListener('touchstart', () => {}, false);
+
 export default ({ children, before, after }) => (
   <Container>
     {before}

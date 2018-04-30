@@ -1,16 +1,15 @@
 {
-  "name": "react-starter",
+  "name": "react-ui-framework-docs",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/index.js",
+  "main": "",
   "repository": "",
   "engines": {
     "node": "9.10.1"
   },
   "scripts": {
     "start": "start-storybook -p 9001 -c .storybook -s ./public",
-    "build": "build-storybook -c .storybook -o ../docs -s ./public",
-    "postinstall": "npm run build"
+    "build": "build-storybook -c .storybook -o ../docs -s ./public"
   },
   "author": "Konrad Szwarc",
   "license": "MIT",

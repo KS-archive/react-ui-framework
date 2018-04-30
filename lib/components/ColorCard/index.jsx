@@ -10,4 +10,4 @@ export default ({ color }) => {
       <ColorText>{colorValue}</ColorText>
     </Card>
   );
-}
+};
