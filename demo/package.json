@@ -2,10 +2,15 @@
   "name": "react-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
   "repository": "",
+  "engines": {
+    "node": "9.10.1"
+  },
   "scripts": {
-    "start": "start-storybook -p 9001 -c .storybook -s ./public"
+    "start": "start-storybook -p 9001 -c .storybook -s ./public",
+    "build": "build-storybook -c .storybook -o ../docs -s ./public",
+    "postinstall": "npm run build"
   },
   "author": "Konrad Szwarc",
   "license": "MIT",
