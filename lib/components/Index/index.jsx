@@ -1,7 +1,7 @@
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import NotificationsSystem from 'reapop';
-import theme from 'reapop-theme-wybo';
+import theme from '../../services/notifications/theme';
 import 'react-tippy/dist/tippy.css';
 import addCSS from '../../helpers/addCSS';
 import { Container, Body } from './styles';

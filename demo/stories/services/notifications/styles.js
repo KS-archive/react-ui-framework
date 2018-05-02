@@ -7,6 +7,7 @@ export const Section = styled.div`
 
 export const Flexbox = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Header = styled.div`

@@ -9,6 +9,7 @@ export default class NotificationsButton extends PureComponent {
       title: 'Info notification',
       message: 'This is an exmple of info notification.',
       status: 'info',
+      dismissAfter: 0,
     });
   }
 
@@ -17,6 +18,7 @@ export default class NotificationsButton extends PureComponent {
       title: 'Success notification',
       message: 'This is an exmple of success notification.',
       status: 'success',
+      dismissAfter: 0,
     });
   }
 
@@ -25,6 +27,7 @@ export default class NotificationsButton extends PureComponent {
       title: 'Warning notification',
       message: 'This is an exmple of warning notification.',
       status: 'warning',
+      dismissAfter: 0,
     });
   }
 
@@ -33,6 +36,57 @@ export default class NotificationsButton extends PureComponent {
       title: 'Error notification',
       message: 'This is an exmple of error notification.',
       status: 'error',
+      dismissAfter: 0,
+    });
+  }
+
+  notifyLoading = () => {
+    this.props.notify({
+      title: 'Loading notification',
+      message: 'This is an exmple of loading notification.',
+      status: 'loading',
+      dismissAfter: 0,
+    });
+  }
+
+  notifyOneButton = () => {
+    this.props.notify({
+      title: 'Loading notification',
+      message: 'This is an exmple of loading notification.',
+      status: 'info',
+      dismissAfter: 0,
+      buttons: [{
+        name: 'Close',
+      }],
+    });
+  }
+
+  notifyTwoButtons = () => {
+    this.props.notify({
+      title: 'Loading notification',
+      message: 'This is an exmple of loading notification.',
+      status: 'info',
+      dismissAfter: 0,
+      buttons: [{
+        name: 'Confirm',
+      }, {
+        name: 'Cancel',
+      }],
+    });
+  }
+
+  notifyTwoButtonsWithPrimary = () => {
+    this.props.notify({
+      title: 'Loading notification',
+      message: 'This is an exmple of loading notification.',
+      status: 'info',
+      dismissAfter: 0,
+      buttons: [{
+        name: 'Confirm',
+        primary: true,
+      }, {
+        name: 'Cancel',
+      }],
     });
   }
 
@@ -46,6 +100,15 @@ export default class NotificationsButton extends PureComponent {
             <StyledButton onClick={this.notifySuccess}>Success</StyledButton>
             <StyledButton onClick={this.notifyWarning}>Warning</StyledButton>
             <StyledButton onClick={this.notifyError}>Error</StyledButton>
+            <StyledButton onClick={this.notifyLoading}>Loading</StyledButton>
+          </Flexbox>
+        </Section>
+        <Section>
+          <Header>Notifications with buttons</Header>
+          <Flexbox>
+            <StyledButton onClick={this.notifyOneButton}>One button</StyledButton>
+            <StyledButton onClick={this.notifyTwoButtons}>Two buttons</StyledButton>
+            <StyledButton onClick={this.notifyTwoButtonsWithPrimary}>Two buttons (first as primary)</StyledButton>
           </Flexbox>
         </Section>
       </Fragment>
