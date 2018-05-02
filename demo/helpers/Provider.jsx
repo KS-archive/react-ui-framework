@@ -13,4 +13,10 @@ const store = createStoreWithMiddleware(
 );
 /* eslint-enable */
 
-export default ({ story }) => <Provider store={store}><Index>{story}</Index></Provider>;
+export default ({ story, notifications = false }) => (
+  <Provider store={store}>
+    <Index notifications={notifications}>
+      {story}
+    </Index>
+  </Provider>
+);
