@@ -44,7 +44,9 @@ class Input extends PureComponent {
 
     return (
       <InputWrapper focused={focused} filled={filled} error={error} pristine={pristine}>
-        <div />
+        <div className="border">
+          <div />
+        </div>
         <label htmlFor={label}>{label}</label>
         <input
           name={label}
