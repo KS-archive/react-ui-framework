@@ -437,7 +437,7 @@
   position: relative;
   min-height: 40px;
   border: none;
-  -webkit-box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid transparent;
   box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.3);
   z-index: 999;
   background-color: #fff;
@@ -480,14 +480,15 @@
 }
 :local .notification-close-button {
   font-size: 14px !important;
-  color: #524c4c;
+  color: var(--grey2);
   cursor: pointer;
 }
 :local .notification-close-button:before {
-  content: "";
+  content: "\f00d";
+  font-weight: 300;
 }
 :local .notification-close-button:hover {
-  color: #6c6565;
+  color: var(--grey3);
 }
 :local .notification-buttons {
   display: flex;
@@ -552,50 +553,43 @@
   cursor: pointer;
 }
 :local .notification--default {
-  border-left: 4px solid #ffffff;
-  border-radius: 4px 0 0 4px;
+  border-left-color: #ffffff;
 }
 :local .notification--default .notification-icon {
   display: none;
 }
 :local .notification--success {
-  border-left: 4px solid var(--success);
-  border-radius: 4px 0 0 4px;
+  border-left-color: var(--success);
 }
 :local .notification--success .notification-icon:before {
   content: "\f058";
   color: var(--success);
 }
 :local .notification--info {
-  border-left: 4px solid var(--info);
-  border-radius: 4px 0 0 4px;
+  border-left-color: var(--info);
 }
 :local .notification--info .notification-icon:before {
   content: "\f05a";
   color: var(--info);
 }
 :local .notification--warning {
-  border-left: 4px solid var(--warning);
-  border-radius: 4px 0 0 4px;
+  border-left-color: var(--warning);
 }
 :local .notification--warning .notification-icon:before {
   content: "\f06a";
   color: var(--warning);
 }
 :local .notification--error {
-  border-left: 4px solid var(--error);
-  border-radius: 4px 0 0 4px;
+  border-left-color: var(--error);
 }
 :local .notification--error .notification-icon:before {
   content: "\f057";
   color: var(--error);
 }
 :local .notification--loading {
-  border-left: 4px solid var(--info);
-  border-radius: 4px 0 0 4px;
+  border-left-color: var(--info);
 }
 :local .notification--loading .notification-icon {
-  -webkit-animation: rotating 1s infinite linear;
   animation: rotating 1s infinite linear;
 }
 :local .notification--loading .notification-icon:before {

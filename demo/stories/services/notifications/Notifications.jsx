@@ -51,8 +51,8 @@ export default class NotificationsButton extends PureComponent {
 
   notifyOneButton = () => {
     this.props.notify({
-      title: 'Loading notification',
-      message: 'This is an exmple of loading notification.',
+      title: 'Notification with button',
+      message: 'This is an notification with one button.',
       status: 'info',
       dismissAfter: 0,
       buttons: [{
@@ -63,8 +63,8 @@ export default class NotificationsButton extends PureComponent {
 
   notifyTwoButtons = () => {
     this.props.notify({
-      title: 'Loading notification',
-      message: 'This is an exmple of loading notification.',
+      title: 'Notification with two buttons',
+      message: 'This is an notification with two buttons',
       status: 'info',
       dismissAfter: 0,
       buttons: [{
@@ -77,8 +77,8 @@ export default class NotificationsButton extends PureComponent {
 
   notifyTwoButtonsWithPrimary = () => {
     this.props.notify({
-      title: 'Loading notification',
-      message: 'This is an exmple of loading notification.',
+      title: 'Notification with primary button',
+      message: 'This notification has one primary button.',
       status: 'info',
       dismissAfter: 0,
       buttons: [{
@@ -87,6 +87,26 @@ export default class NotificationsButton extends PureComponent {
       }, {
         name: 'Cancel',
       }],
+    });
+  }
+
+  notifyWithImage = () => {
+    this.props.notify({
+      title: 'Notification with image',
+      message: 'This notification contains an image instead of icon.',
+      status: 'info',
+      dismissAfter: 0,
+      image: '/img/squirrel.jpg',
+    });
+  }
+
+  notifyWithClosingButton = () => {
+    this.props.notify({
+      title: ' Notification with closing button',
+      message: 'This notification can be closed only if you click button.',
+      status: 'info',
+      dismissAfter: 0,
+      closeButton: true,
     });
   }
 
@@ -109,6 +129,13 @@ export default class NotificationsButton extends PureComponent {
             <StyledButton onClick={this.notifyOneButton}>One button</StyledButton>
             <StyledButton onClick={this.notifyTwoButtons}>Two buttons</StyledButton>
             <StyledButton onClick={this.notifyTwoButtonsWithPrimary}>Two buttons (first as primary)</StyledButton>
+          </Flexbox>
+        </Section>
+        <Section>
+          <Header>Other variants</Header>
+          <Flexbox>
+            <StyledButton onClick={this.notifyWithImage}>With image</StyledButton>
+            <StyledButton onClick={this.notifyWithClosingButton}>With closing button</StyledButton>
           </Flexbox>
         </Section>
       </Fragment>
