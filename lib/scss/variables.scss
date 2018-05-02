@@ -41,26 +41,13 @@
   }
 
   /* COLORS */
-  --primary1: hsl(208, 100%, 40%);
-  --primary2: hsl(208, 100%, 56%);
-  --primary2-hover: hsl(208, 100%, 64%);
-  --primary2-active: hsl(208, 100%, 48%);
-  --primary3: hsl(208, 100%, 72%);
-  --accent1: hsl(24, 100%, 48%);
-  --accent2: hsl(24, 100%, 64%);
-
-  // XXX
-  // --primary1: hsl(213, 96%, 11%);
-  // --primary2: hsl(208, 57%, 21%);
-  // --primary3: hsl(216, 39%, 28%);
-  // --accent1: hsl(40, 100%, 67%);
-  // --accent2: hsl(42, 53%, 71%);
-
-  // --primary1: hsl(10, 94%, 60%);
-  // --primary2: hsl(28, 83%, 61%);
-  // --primary3: hsl(216, 39%, 28%);
-  // --accent1: hsl(211, 87%, 25%);
-  // --accent2: hsl(60, 38%, 87%);
+  --primary1: hsl(208, 100%, 32%);
+  --primary2: hsl(208, 100%, 48%);
+  --primary2-hover: hsl(208, 100%, 56%);
+  --primary2-active: hsl(208, 100%, 40%);
+  --primary3: hsl(208, 100%, 64%);
+  --accent1: hsl(48, 100%, 48%);
+  --accent2: hsl(48, 100%, 64%);
 
   --grey1: hsl(0, 0%, 16%);
   --grey2: hsl(0, 0%, 40%);
@@ -70,10 +57,10 @@
   --white2: hsl(0, 0%, 88%);
   --white3: hsl(0, 0%, 96%);
 
-  --success: hsl(144, 100%, 56%);
+  --success: hsl(128, 100%, 56%);
   --error: hsl(0, 100%, 56%);
-  --warning: hsl(40, 100%, 56%);
-  --info: hsl(192, 100%, 56%);
+  --warning: hsl(32, 100%, 56%);
+  --info: hsl(216, 100%, 56%);
 
   --background: hsl(209, 100%, 96%);
   --overlay: hsla(0, 0%, 16%, 24%);
@@ -96,7 +83,7 @@
   --font-md-lh: 1.375;
 
   --font-sm: 14px;
-  --font-sm-lh: 1;
+  --font-sm-lh: 1.4;
 
   --font-xs: 12px;
   --font-xs-lh: 1;

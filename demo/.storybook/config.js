@@ -7,6 +7,7 @@ function loadStories() {
   require('../stories/dataDisplay/Tooltip');
   require('../stories/dataEntry/Input');
   require('../stories/services/forms');
+  require('../stories/services/notifications');
 }
 
 configure(loadStories, module);
