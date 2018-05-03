@@ -27,5 +27,13 @@ export default () => (
         <StyledButton ghost kind="error">Error</StyledButton>
       </Flexbox>
     </Section>
+    <Section>
+      <Header style={{ color: '#fff' }}>Buttons sizes</Header>
+      <Flexbox>
+        <StyledButton size="lg">Large</StyledButton>
+        <StyledButton>Medium (default)</StyledButton>
+        <StyledButton size="sm">Small</StyledButton>
+      </Flexbox>
+    </Section>
   </Container>
 );
