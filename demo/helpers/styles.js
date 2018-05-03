@@ -22,6 +22,6 @@ export const Header = styled.div`
   margin-bottom: var(--space-md);
 `;
 
-export const StyledButton = styled(Button) `
+export const StyledButton = styled(Button)`
   margin: var(--space-sm);
 `;
