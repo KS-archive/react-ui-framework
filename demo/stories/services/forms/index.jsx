@@ -1,12 +1,23 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Provider from '../../../helpers/Provider';
-import Form from './Form';
+import React, { PureComponent } from 'react';
+import { createForm } from 'react-ui-framework/services/forms';
+import FIELDS from './formConfig';
+import { Container } from '../../../helpers/styles';
 
-storiesOf('Services', module)
-  .addDecorator(story => <Provider story={story()} />)
-  .add('Forms', () => (
-    <div style={{ width: '100%', padding: 32 }}>
-      <Form />
-    </div>
-  ));
+@createForm('basic', FIELDS)
+export default class Form extends PureComponent {
+  componentWillMount() {
+    this.props.initializeForm.call(this);
+  }
+
+  onSubmit = values => console.log(values);
+
+  render() {
+    const { Field } = this;
+
+    return (
+      <Container>
+        <Field name="email" />
+      </Container>
+    );
+  }
+}

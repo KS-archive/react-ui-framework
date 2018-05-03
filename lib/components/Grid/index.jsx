@@ -17,6 +17,8 @@ const isGridItem = ({ type }) => {
   return true;
 };
 
+const getSizeFromColumns = columns => Number(columns.split('/')[1]) - Number(columns.split('/')[0]);
+
 export default class Grid extends PureComponent {
   constructor(props) {
     super(props);
@@ -38,7 +40,9 @@ export default class Grid extends PureComponent {
     let lastSize = 1;
     let lastOffset = 0;
     sizes.map((size) => {
-      lastSize = child.props[size] || lastSize;
+      const childSize = child.props[size];
+      const columns = String(childSize).includes('/') ? getSizeFromColumns(childSize) : childSize;
+      lastSize = columns || lastSize;
       lastOffset = child.props[`${size}-offset`] || lastOffset;
       const sum = this.startColumns[size] + lastOffset + lastSize;
       const [start, end] = (sum > 13) ? [1 + lastOffset, 1 + lastSize + lastOffset] : [this.startColumns[size] + lastOffset, sum];

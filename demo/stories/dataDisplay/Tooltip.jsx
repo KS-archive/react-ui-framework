@@ -1,11 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Index, Button, Tooltip } from 'react-ui-framework';
+import { Button, Tooltip } from 'react-ui-framework';
+import { Container } from '../../helpers/styles';
 
-storiesOf('Data display', module)
-  .addDecorator(story => <Index><div style={{ padding: 32 }}>{story()}</div></Index>)
-  .add('Tooltip', () => (
+export default () => (
+  <Container>
     <Tooltip title="I'm the default tooltip">
       <Button>Hover me</Button>
     </Tooltip>
-  ));
+  </Container>
+);
