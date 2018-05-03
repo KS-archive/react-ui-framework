@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Index, Grid, GridItem } from 'react-ui-framework';
+import { Grid, GridItem } from 'react-ui-framework';
+import { Container, Section, Header } from '../../helpers/styles';
 
 const style = {
   display: 'flex',
@@ -12,11 +12,10 @@ const style = {
   backgroundColor: 'var(--primary2)',
 };
 
-storiesOf('Layout', module)
-  .addDecorator(story => <Index>{story()}</Index>)
-  .add('Grid', () => (
-    <div style={{ width: '100%', padding: 32 }}>
-      <h1 style={{ marginBottom: 16 }}>Basic example</h1>
+export default () => (
+  <Container>
+    <Section>
+      <Header>Basic example</Header>
       <Grid>
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>1</GridItem>
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>2</GridItem>
@@ -31,7 +30,9 @@ storiesOf('Layout', module)
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>11</GridItem>
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>12</GridItem>
       </Grid>
-      <h1 style={{ marginBottom: 16, marginTop: 32 }}>Fluid container</h1>
+    </Section>
+    <Section>
+      <Header>Fluid container</Header>
       <Grid fluid>
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>1</GridItem>
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>2</GridItem>
@@ -46,7 +47,9 @@ storiesOf('Layout', module)
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>11</GridItem>
         <GridItem xxl={1} xl={2} lg={3} md={4} sm={6} xs={12} style={style}>12</GridItem>
       </Grid>
-      <h1 style={{ marginBottom: 16, marginTop: 32 }}>Offset</h1>
+    </Section>
+    <Section>
+      <Header>Offset</Header>
       <Grid>
         <GridItem xs={1} xs-offset={11} style={style}>1</GridItem>
         <GridItem xs={2} xs-offset={10} style={style}>2</GridItem>
@@ -61,5 +64,6 @@ storiesOf('Layout', module)
         <GridItem xs={11} xs-offset={1} style={style}>11</GridItem>
         <GridItem xs={12} style={style}>12</GridItem>
       </Grid>
-    </div>
-  ));
+    </Section>
+  </Container>
+);
