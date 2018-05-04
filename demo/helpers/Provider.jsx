@@ -15,7 +15,7 @@ const store = createStoreWithMiddleware(
 
 export default ({ story, notifications = false }) => (
   <Provider store={store}>
-    <Index notifications={notifications}>
+    <Index notifications={notifications} fa="sha384-HX5QvHXoIsrUAY0tE/wG8+Wt1MwvaY28d9Zciqcj6Ob7Tw99tFPo4YUXcZw9l930">
       {story}
     </Index>
   </Provider>

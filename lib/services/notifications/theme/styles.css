@@ -467,7 +467,7 @@
   align-self: flex-start;
 }
 :local .notification-icon::before {
-  font-weight: 300;
+  font-weight: var(--fa-light);
 }
 :local .notification-meta {
   vertical-align: top;
@@ -485,7 +485,7 @@
 }
 :local .notification-close-button:before {
   content: "\f00d";
-  font-weight: 300;
+  font-weight: var(--fa-light);
 }
 :local .notification-close-button:hover {
   color: var(--grey3);
@@ -590,9 +590,9 @@
   border-left-color: var(--info);
 }
 :local .notification--loading .notification-icon {
-  animation: rotating 1s infinite linear;
+  animation: rotating 2s infinite linear;
 }
 :local .notification--loading .notification-icon:before {
-  content: "\f3f4";
+  content: "\f110";
   color: var(--info);
 }
