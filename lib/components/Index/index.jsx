@@ -28,9 +28,10 @@ const getFontAwesome = (fa) => {
     });
     colors.setValue('--fa-light', '300');
   } else {
+    console.log(fa);
     enhanceHead('link', {
       rel: 'stylesheet',
-      href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css',
+      href: 'https://pro.fontawesome.com/releases/v5.0.12/css/all.css',
       integrity: fa,
       crossorigin: 'anonymous',
     });
