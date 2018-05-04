@@ -19,21 +19,21 @@ const Button = ({ ghost, type, onClick, children, kind, className, size }) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  ghost: PropTypes.bool,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  onClick: PropTypes.func,
-  kind: PropTypes.oneOf(['primary', 'accent', 'white', 'info', 'success', 'error', 'warning']),
   className: PropTypes.string,
+  ghost: PropTypes.bool,
+  kind: PropTypes.oneOf(['primary', 'accent', 'white', 'info', 'success', 'error', 'warning']),
+  onClick: PropTypes.func,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
 };
 
 Button.defaultProps = {
-  ghost: false,
-  type: 'button',
-  onClick: () => {},
-  kind: 'primary',
   className: '',
+  ghost: false,
+  kind: 'primary',
+  onClick: () => {},
   size: 'md',
+  type: 'button',
 };
 
 export default Button;

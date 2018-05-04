@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Flexbox, Section, Header, StyledButton } from '../../helpers/styles';
+import { Container, Flexbox, Section, Header, StyledButton } from '../../../helpers/styles';
 
 export default () => (
   <Container style={{ backgroundColor: '#333' }}>
