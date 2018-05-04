@@ -28,17 +28,17 @@ const getFontAwesome = (fa) => {
     });
     colors.setValue('--fa-light', '300');
   } else {
-    console.log(fa);
     enhanceHead('link', {
       rel: 'stylesheet',
       href: 'https://pro.fontawesome.com/releases/v5.0.12/css/all.css',
       integrity: fa,
       crossorigin: 'anonymous',
     });
+    colors.setValue('--fa-light', '300');
   }
 };
 
-export default ({ children, before, after, notifications, fa = 'local' }) => {
+export default ({ children, before, after, notifications, fa = 'free' }) => {
   getFontAwesome(fa);
 
   return (

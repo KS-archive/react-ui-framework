@@ -96,7 +96,7 @@ export default class Notifications extends PureComponent {
       message: 'This notification contains an image instead of icon.',
       status: 'info',
       dismissAfter: 0,
-      image: '/img/squirrel.jpg',
+      image: 'img/squirrel.jpg',
     });
   }
 
