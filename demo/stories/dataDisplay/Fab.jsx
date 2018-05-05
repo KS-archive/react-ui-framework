@@ -4,11 +4,12 @@ import { Container } from '../../helpers/styles';
 
 export default () => (
   <Container>
-    {/* <Fab
+    <Fab
       title="Filters"
       icon="icons/filter.svg"
       count={1}
-    /> */}
+      position="left bottom"
+    />
     <Fab
       icon="icons/edit.svg"
       iconOpen="icons/times.svg"

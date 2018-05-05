@@ -1,10 +1,40 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ReactSVG from 'react-svg';
 import enhanceWithClickOutside from 'react-click-outside';
 import { Container, BigFab, Wrapper, SmallFab, Badge } from './styles';
 
+const getTooltipPosition = position => do {
+  if (position.includes('right')) 'left'
+  else if (position.includes('left')) 'right'
+  else if (position.includes('top')) 'bottom'
+  else 'top'
+};
+
+const calculateDistance = (elem, mouseX, mouseY) => {
+  const { left, top } = elem.getBoundingClientRect();
+  const x = mouseX - (left + document.body.scrollLeft + (elem.offsetWidth / 2));
+  const y = mouseY - (top + document.body.scrollTop + (elem.offsetHeight / 2));
+  return {
+    x: Math.abs(x),
+    y: Math.abs(y),
+  };
+};
+
+const renderSmallFab = ({ title, icon, onClick }, i, position, isOpen) => (
+  <Wrapper pos={isOpen && (i + 1)} onClick={onClick} position={position}>
+    <SmallFab
+      title={title}
+      size="small"
+      position={getTooltipPosition(position)}
+    >
+      <ReactSVG path={icon} />
+    </SmallFab>
+  </Wrapper>
+);
+
 @enhanceWithClickOutside
-export default class Fab extends PureComponent {
+class Fab extends PureComponent {
   state = {
     open: false,
   }
@@ -18,27 +48,23 @@ export default class Fab extends PureComponent {
   }
 
   onMouseMove = ({ pageX, pageY }) => {
-    const { x, y } = this.calculateDistance(this.fab, pageX, pageY);
-    if ((x > 75) || (y > (this.props.items.length * 64) + 91)) {
+    const { x, y } = calculateDistance(this.fab, pageX, pageY);
+    const { position } = this.props;
+    if (position === 'right center' || position === 'left center') {
+      if ((x > (this.props.items.length * 64) + 91) || (y > 96)) {
+        this.setState({ open: false });
+      }
+    } else if ((x > 96) || (y > (this.props.items.length * 64) + 91)) {
       this.setState({ open: false });
     }
   }
 
-  calculateDistance = (elem, mouseX, mouseY) => {
-    const { left, top } = elem.getBoundingClientRect();
-    const x = mouseX - (left + document.body.scrollLeft + (elem.offsetWidth / 2));
-    const y = mouseY - (top + document.body.scrollTop + (elem.offsetHeight / 2));
-    return {
-      x: Math.abs(x),
-      y: Math.abs(y),
-    };
-  }
-
   handleClick = () => {
-    if (!this.props.items || this.props.items.length === 0) {
-      this.props.onClick();
+    const { props: { items, onClick }, state: { open } } = this;
+    if (items.length === 0) {
+      onClick();
     } else {
-      this.setState({ open: !this.state.open });
+      this.setState({ open: !open });
     }
   }
 
@@ -46,34 +72,51 @@ export default class Fab extends PureComponent {
     this.setState({ open: false });
   }
 
-  renderSmallFab = ({ title, icon, onClick }, i) => (
-    <Wrapper pos={this.state.open && (i + 1)} onClick={onClick}>
-      <SmallFab
-        title={title}
-        size="small"
-        position="left"
-      >
-        <ReactSVG path={icon} />
-      </SmallFab>
-    </Wrapper>
-  );
-
   render() {
-    const { icon, title, items = [], count, iconOpen } = this.props;
+    const { props: { icon, title, items, count, iconOpen, position, offset }, state: { open } } = this;
     return (
       <Container
         onClick={this.handleClick}
-        open={this.state.open}
+        open={open}
         innerRef={(x) => { this.fab = x; }}
+        position={position}
+        offset={offset}
       >
         <Badge count={items.length === 0 ? count : null}>
-          <BigFab disabled={this.state.open} title={title || ''} position="left" touchHold>
+          <BigFab disabled={open} title={title} position={getTooltipPosition(position)} touchHold>
             <ReactSVG path={icon} />
             <ReactSVG path={iconOpen || icon} />
           </BigFab>
         </Badge>
-        {items.map(this.renderSmallFab)}
+        {items.map((p, i) => renderSmallFab(p, i, position, this.state.open))}
       </Container>
     );
   }
 }
+
+Fab.propTypes = {
+  count: PropTypes.number,
+  icon: PropTypes.string.isRequired,
+  iconOpen: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    icon: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    title: PropTypes.string,
+  })),
+  offset: PropTypes.arrayOf(PropTypes.number),
+  onClick: PropTypes.func,
+  position: PropTypes.oneOf(['left top', 'left center', 'left bottom', 'center top', 'center bottom', 'right top', 'right center', 'right bottom']),
+  title: PropTypes.string,
+};
+
+Fab.defaultProps = {
+  count: null,
+  iconOpen: '',
+  items: [],
+  position: 'right bottom',
+  offset: [0, 0],
+  onClick: () => {},
+  title: '',
+};
+
+export default Fab;
