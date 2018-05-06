@@ -2,6 +2,7 @@ import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import NotificationsSystem from 'reapop';
 import 'react-tippy/dist/tippy.css';
+import 'react-select/dist/react-select.css';
 import { colors } from '../../utils';
 import theme from '../../services/notifications/theme';
 import enhanceHead from '../../helpers/enhanceHead';
