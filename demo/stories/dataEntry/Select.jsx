@@ -7,7 +7,13 @@ export default () => (
     <Section>
       <Header>Basic select</Header>
       <Flexbox>
-        <Select label="E-mail" />
+        <Select
+          label="E-mail"
+          options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' },
+          ]}
+        />
       </Flexbox>
     </Section>
   </Container>
