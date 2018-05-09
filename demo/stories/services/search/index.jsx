@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react';
-import { Input } from 'react-ui-framework';
+import { Input, Button } from 'react-ui-framework';
 import { withSearch } from 'react-ui-framework/services/search';
-import { Container, Section, Flexbox, Header, StyledButton } from '../../../helpers/styles';
+import { Container, Section, Flexbox, Header } from '../../../helpers/styles';
+
+const StyledFlexbox = Flexbox.extend`
+  align-items: center;
+`;
 
 @withSearch
 export default class Notifications extends PureComponent {
@@ -22,10 +26,10 @@ export default class Notifications extends PureComponent {
       <Container>
         <Section>
           <Header>Basic search</Header>
-          <Flexbox>
+          <StyledFlexbox>
             <Input value={this.state.query} onChange={this.onChange} />
-            <StyledButton onClick={this.search}>Search</StyledButton>
-          </Flexbox>
+            <Button onClick={this.search}>Search</Button>
+          </StyledFlexbox>
         </Section>
       </Container>
     );
