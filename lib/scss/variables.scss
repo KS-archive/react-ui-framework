@@ -42,10 +42,15 @@
 
   /* COLORS */
   --primary1: hsl(211, 92%, 44%);
+  --primary1-hover: hsl(211, 92%, 48%);
+  --primary1-active: hsl(211, 92%, 40%);
+  --primary1: hsl(211, 92%, 44%);
   --primary2: hsl(209, 100%, 55%);
   --primary2-hover: hsl(209, 100%, 59%);
   --primary2-active: hsl(209, 100%, 51%);
   --primary3: hsl(207, 100%, 63%);
+  --primary3-hover: hsl(207, 100%, 67%);
+  --primary3-active: hsl(207, 100%, 59%);
   --accent1: hsl(40, 96%, 53%);
   --accent1-hover: hsl(40, 96%, 57%);
   --accent1-active: hsl(40, 96%, 49%);
@@ -76,10 +81,14 @@
   --info-hover: hsl(180, 82%, 46%);
   --info-active: hsl(180, 82%, 38%);
 
-  --background: hsl(209, 100%, 96%);
+  --background: hsl(240, 100%, 99%);
   --overlay: hsla(0, 0%, 16%, 24%);
 
   /* TYPOGRAPHY */
+  --text1: var(--grey1);
+  --text2: var(--grey2);
+  --text3: var(--grey3);
+
   --mainFont: 'Raleway', 'Arial', sans-serif;
   --headerFont: 'Montserrat', 'Arial', sans-serif;
   --regular: 400;
@@ -87,7 +96,7 @@
   --bold: 700;
 
   --font-xxl: 40px;
-  --font-xxl-lh: 1.125;
+  --font-xxl-lh: 1.25;
 
   --font-xl: 32px;
   --font-xl-lh: 1.25;

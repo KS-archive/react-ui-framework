@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import WebfontLoader from '@dr-kobros/react-webfont-loader';
 import { Scrollbars } from 'react-custom-scrollbars';
 import NotificationsSystem from 'reapop';
 
 import 'react-tippy/dist/tippy.css';
 import 'react-select/dist/react-select.css';
 
-import { colors } from '../../utils';
+import { styles } from '../../utils';
 import theme from '../../services/notifications/theme';
 import enhanceHead from '../../helpers/enhanceHead';
 import { Container, Body } from './styles';
@@ -19,7 +20,7 @@ const getFontAwesome = (fa) => {
       integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9',
       crossorigin: 'anonymous',
     });
-    colors.setValue('--fa-light', '600');
+    styles.setValue('--fa-light', '600');
   } else if (fa === 'local') {
     enhanceHead('link', {
       rel: 'stylesheet prefetch',
@@ -29,7 +30,7 @@ const getFontAwesome = (fa) => {
       rel: 'stylesheet prefetch',
       href: 'https://pro-staging.fontawesome.com/releases/v5.0.8/css/all.css',
     });
-    colors.setValue('--fa-light', '300');
+    styles.setValue('--fa-light', '300');
   } else {
     enhanceHead('link', {
       rel: 'stylesheet',
@@ -37,23 +38,41 @@ const getFontAwesome = (fa) => {
       integrity: fa,
       crossorigin: 'anonymous',
     });
-    colors.setValue('--fa-light', '300');
+    styles.setValue('--fa-light', '300');
   }
 };
 
-export default ({ children, before, after, notifications, fa = 'free' }) => {
-  getFontAwesome(fa);
-
-  return (
-    <Container>
-      {before}
-      <Body>
-        <Scrollbars>
-          {children}
-        </Scrollbars>
-      </Body>
-      {after}
-      {notifications && <NotificationsSystem theme={theme} />}
-    </Container>
-  );
+const config = {
+  google: {
+    families: [
+      'Montserrat:400,500,700:latin,latin-ext',
+      'Raleway:400,500,700:latin,latin-ext',
+    ],
+  },
 };
+
+export default class Index extends PureComponent {
+  constructor(props) {
+    super(props);
+    getFontAwesome(this.props.fa || 'free');
+  }
+
+  render() {
+    const { children, before, after, notifications, className, bodyClassName } = this.props;
+
+    return (
+      <WebfontLoader config={config}>
+        <Container className={className}>
+          {before}
+          <Body className={bodyClassName}>
+            <Scrollbars>
+              {children}
+            </Scrollbars>
+          </Body>
+          {after}
+          {notifications && <NotificationsSystem theme={theme} />}
+        </Container>
+      </WebfontLoader>
+    );
+  }
+}

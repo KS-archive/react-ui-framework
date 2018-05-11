@@ -12,6 +12,7 @@
   "author": "Konrad Szwarc",
   "license": "MIT",
   "peerDependencies": {
+    "@dr-kobros/react-webfont-loader": "^8.0.0",
     "react": "^16.3.1",
     "react-click-outside": "^3.0.1",
     "react-custom-scrollbars": "^4.2.1",
@@ -38,6 +39,7 @@
     "@babel/preset-env": "7.0.0-beta.44",
     "@babel/preset-react": "7.0.0-beta.44",
     "@babel/preset-stage-0": "7.0.0-beta.44",
+    "@dr-kobros/react-webfont-loader": "^8.0.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^8.0.0-beta.0",
     "babel-plugin-styled-components": "^1.5.1",
