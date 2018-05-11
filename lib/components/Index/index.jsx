@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import WebfontLoader from '@dr-kobros/react-webfont-loader';
 import { Scrollbars } from 'react-custom-scrollbars';
 import NotificationsSystem from 'reapop';
@@ -11,6 +11,8 @@ import theme from '../../services/notifications/theme';
 import enhanceHead from '../../helpers/enhanceHead';
 import { Container, Body } from './styles';
 import '../../styles.css';
+
+let isFontAwesomeLoaded = false;
 
 const getFontAwesome = (fa) => {
   if (fa === 'free') {
@@ -40,6 +42,7 @@ const getFontAwesome = (fa) => {
     });
     styles.setValue('--fa-light', '300');
   }
+  isFontAwesomeLoaded = true;
 };
 
 const config = {
@@ -51,28 +54,23 @@ const config = {
   },
 };
 
-export default class Index extends PureComponent {
-  constructor(props) {
-    super(props);
-    getFontAwesome(this.props.fa || 'free');
+export default ({ children, before, after, notifications, className, bodyClassName, fa = 'free' }) => {
+  if (!isFontAwesomeLoaded) {
+    getFontAwesome(fa);
   }
 
-  render() {
-    const { children, before, after, notifications, className, bodyClassName } = this.props;
-
-    return (
-      <WebfontLoader config={config}>
-        <Container className={className}>
-          {before}
-          <Body className={bodyClassName}>
-            <Scrollbars>
-              {children}
-            </Scrollbars>
-          </Body>
-          {after}
-          {notifications && <NotificationsSystem theme={theme} />}
-        </Container>
-      </WebfontLoader>
-    );
-  }
-}
+  return (
+    <WebfontLoader config={config}>
+      <Container className={className}>
+        {before}
+        <Body className={bodyClassName}>
+          <Scrollbars>
+            {children}
+          </Scrollbars>
+        </Body>
+        {after}
+        {notifications && <NotificationsSystem theme={theme} />}
+      </Container>
+    </WebfontLoader>
+  );
+};
