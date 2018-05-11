@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import withRouter from 'react-router/withRouter';
 import queryString from 'query-string';
 import { setSearch } from './actions';
+import { objRemove } from '../../utils/immutable';
 
 export default (WrappedComponent) => {
 
@@ -15,9 +16,16 @@ export default (WrappedComponent) => {
       }
     }
 
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.location !== this.props.location) {
-        console.log(nextProps.location);
+    componentWillReceiveProps(np) {
+      if (np.location.search !== this.props.location.search) {
+        this.setSearch(queryString.parse(np.location.search));
+      }
+      if (np.search !== this.props.search) {
+        const urlNewParams = np.search.query ? np.search : objRemove(np.search, 'query');
+        np.history.push({
+          pathname: np.history.location.pathname,
+          search: queryString.stringify(urlNewParams),
+        });
       }
     }
 
