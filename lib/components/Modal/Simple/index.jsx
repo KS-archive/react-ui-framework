@@ -30,7 +30,7 @@ const SimpleDialog = ({ width, duration, animationName, animationType, color, sh
       </Content>
       {buttons.length > 0 &&
         <Footer>
-          {buttons.map(button => <Button size="sm" {...button} />)}
+          {buttons.map(button => <Button key={button.label} size="sm" {...button} />)}
         </Footer>
       }
     </StyledDialog>

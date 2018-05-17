@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Scrollbars } from 'react-custom-scrollbars';
 import { Container, Mask } from './styles';
 import SimpleDialog from './Simple';
 
@@ -19,9 +20,18 @@ class Modal extends PureComponent {
     if (wasVisible && !isVisible) this.leave();
   }
 
+  componentDidUpdate(pp) {
+    console.log(this.props.title);
+    if (!pp.visible && this.props.visible) {
+      this.scrollbars.scrollToTop();
+    }
+  }
+
   onKeyUp = ({ keyCode }) => (keyCode === 27) && this.props.onClose();
 
-  enter = () => this.setState({ isShow: true, animationType: 'enter' });
+  enter = () => {
+    this.setState({ isShow: true, animationType: 'enter' });
+  }
 
   leave = () => this.setState({ animationType: 'leave' });
 
@@ -51,21 +61,23 @@ class Modal extends PureComponent {
         innerRef={(container) => { this.container = container; }}
         onKeyUp={this.onKeyUp}
       >
-        <Mask onClick={onClose} />
-        <SimpleDialog
-          width={width}
-          duration={duration}
-          animationName={animationName}
-          animationType={animationType}
-          color={color}
-          showCloseButton={showCloseButton}
-          onClose={onClose}
-          icon={icon}
-          title={title}
-          buttons={buttons.reverse()}
-        >
-          {children}
-        </SimpleDialog>
+        <Mask key="mask" onClick={onClose} />
+        <Scrollbars key="scrollbars" ref={(scrollbars) => { this.scrollbars = scrollbars; }}>
+          <SimpleDialog
+            width={width}
+            duration={duration}
+            animationName={animationName}
+            animationType={animationType}
+            color={color}
+            showCloseButton={showCloseButton}
+            onClose={onClose}
+            icon={icon}
+            title={title}
+            buttons={buttons.reverse()}
+          >
+            {children}
+          </SimpleDialog>
+        </Scrollbars>
       </Container>
     );
   }
