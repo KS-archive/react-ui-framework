@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spinner } from 'react-ui-framework';
-import { Container, Header, Section, Flexbox } from '../../helpers/styles';
+import { Container, Header, Section, Flexbox } from '../../../helpers/styles';
 
 export default () => (
   <Container>

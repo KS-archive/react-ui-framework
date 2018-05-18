@@ -2,11 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 import { Index } from 'react-ui-framework';
-import Buttons from './Buttons';
-import ButtonsReadme from './Buttons/README.md';
+import Button from './Button';
+import ButtonReadme from './Button/README.md';
 import SVGIcon from './SVGIcon';
+import SVGIconReadme from './SVGIcon/README.md';
 
 storiesOf('General', module)
   .addDecorator(story => <Index>{story()}</Index>)
-  .add('Buttons', withReadme(ButtonsReadme, () => <Buttons />))
-  .add('SVGIcon', () => <SVGIcon />);
+  .add('Button', withReadme(ButtonReadme, () => <Button />))
+  .add('SVGIcon', withReadme(SVGIconReadme, () => <SVGIcon />));

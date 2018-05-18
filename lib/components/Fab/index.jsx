@@ -113,9 +113,9 @@ Fab.defaultProps = {
   count: null,
   iconOpen: '',
   items: [],
-  position: 'right bottom',
   offset: [0, 0],
-  onClick: () => {},
+  onClick: () => { },
+  position: 'right bottom',
   title: '',
 };
 

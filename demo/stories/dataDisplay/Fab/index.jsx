@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fab } from 'react-ui-framework';
-import { Container } from '../../helpers/styles';
+import { Container } from '../../../helpers/styles';
 
 export default () => (
   <Container>
