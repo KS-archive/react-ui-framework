@@ -101,7 +101,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  width: 400,
+  width: 456,
   visible: false,
   showCloseButton: true,
   animation: 'fade',
