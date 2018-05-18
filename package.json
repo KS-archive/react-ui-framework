@@ -12,12 +12,14 @@
   "author": "Konrad Szwarc",
   "license": "MIT",
   "peerDependencies": {
+    "@dr-kobros/react-webfont-loader": "^8.0.0",
     "react": "^16.3.1",
     "react-click-outside": "^3.0.1",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.3.1",
     "react-md-spinner": "^0.2.5",
     "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
     "react-select": "^1.2.1",
     "react-svg": "^3.0.1",
     "react-tippy": "^1.2.2",
@@ -37,6 +39,7 @@
     "@babel/preset-env": "7.0.0-beta.44",
     "@babel/preset-react": "7.0.0-beta.44",
     "@babel/preset-stage-0": "7.0.0-beta.44",
+    "@dr-kobros/react-webfont-loader": "^8.0.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^8.0.0-beta.0",
     "babel-plugin-styled-components": "^1.5.1",
@@ -60,8 +63,9 @@
     "react-dom": "^16.3.1",
     "react-md-spinner": "^0.2.5",
     "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
     "react-select": "^1.2.1",
-    "react-svg": "^3.0.1",
+    "react-svg": "^3.0.4",
     "react-tippy": "^1.2.2",
     "reapop": "^1.2.0",
     "reapop-theme-wybo": "^1.0.2",
@@ -76,6 +80,8 @@
   },
   "dependencies": {
     "npm": "^6.0.0",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "query-string": "^6.1.0",
+    "react-sizeme": "^2.4.3"
   }
 }

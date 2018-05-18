@@ -25,14 +25,10 @@ export default () => (
         <ColorCard color="var(--grey1)" />
         <ColorCard color="var(--grey2)" />
         <ColorCard color="var(--grey3)" />
-      </Flexbox>
-    </Section>
-    <Section>
-      <Header>Whites</Header>
-      <Flexbox>
-        <ColorCard color="var(--white1)" />
-        <ColorCard color="var(--white2)" />
-        <ColorCard color="var(--white3)" />
+        <ColorCard color="var(--grey4)" />
+        <ColorCard color="var(--grey5)" />
+        <ColorCard color="var(--grey6)" />
+        <ColorCard color="var(--grey7)" />
       </Flexbox>
     </Section>
     <Section>

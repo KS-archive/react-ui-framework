@@ -5,6 +5,7 @@ function loadStories() {
   require('../stories/general');
   require('../stories/dataEntry');
   require('../stories/dataDisplay');
+  require('../stories/feedback');
   require('../stories/services');
 }
 

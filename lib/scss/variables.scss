@@ -42,10 +42,14 @@
 
   /* COLORS */
   --primary1: hsl(211, 92%, 44%);
+  --primary1-hover: hsl(211, 92%, 48%);
+  --primary1-active: hsl(211, 92%, 40%);
   --primary2: hsl(209, 100%, 55%);
   --primary2-hover: hsl(209, 100%, 59%);
   --primary2-active: hsl(209, 100%, 51%);
   --primary3: hsl(207, 100%, 63%);
+  --primary3-hover: hsl(207, 100%, 67%);
+  --primary3-active: hsl(207, 100%, 59%);
   --accent1: hsl(40, 96%, 53%);
   --accent1-hover: hsl(40, 96%, 57%);
   --accent1-active: hsl(40, 96%, 49%);
@@ -53,14 +57,19 @@
 
   --grey1: hsl(0, 0%, 16%);
   --grey2: hsl(0, 0%, 40%);
+  --grey2-hover: hsl(0, 0%, 44%);
+  --grey2-active: hsl(0, 0%, 36%);
   --grey3: hsl(0, 0%, 64%);
+  --grey3-hover: hsl(0, 0%, 68%);
+  --grey3-active: hsl(0, 0%, 60%);
+  --grey4: hsl(0, 0%, 72%);
+  --grey5: hsl(0, 0%, 80%);
+  --grey6: hsl(0, 0%, 88%);
+  --grey7: hsl(0, 0%, 96%);
 
-  --white0: hsl(0, 0%, 100%);
-  --white0-hover: hsl(0, 0%, 96%);
-  --white0-active: hsl(0, 0%, 92%);
-  --white1: hsl(0, 0%, 80%);
-  --white2: hsl(0, 0%, 88%);
-  --white3: hsl(0, 0%, 96%);
+  --white: hsl(0, 0%, 100%);
+  --white-hover: hsl(0, 0%, 96%);
+  --white-active: hsl(0, 0%, 92%);
 
   --success: hsl(100, 76%, 44%);
   --success-hover: hsl(100, 76%, 48%);
@@ -75,28 +84,34 @@
   --info-hover: hsl(180, 82%, 46%);
   --info-active: hsl(180, 82%, 38%);
 
-  --background: hsl(209, 100%, 96%);
+  --background: hsl(240, 100%, 99%);
   --overlay: hsla(0, 0%, 16%, 24%);
 
   /* TYPOGRAPHY */
-  --mainFont: 'Roboto', 'Arial', sans-serif;
-  --normal: 400;
+  --text1: var(--grey1);
+  --text2: var(--grey2);
+  --text3: var(--grey3);
+
+  --mainFont: 'Raleway', 'Arial', sans-serif;
+  --headerFont: 'Montserrat', 'Arial', sans-serif;
+  --regular: 400;
+  --medium: 500;
   --bold: 700;
 
-  --font-xxl: 48px;
-  --font-xxl-lh: 1.05;
+  --font-xxl: 40px;
+  --font-xxl-lh: 1.25;
 
   --font-xl: 32px;
   --font-xl-lh: 1.25;
 
   --font-lg: 24px;
-  --font-lg-lh: 1.25;
+  --font-lg-lh: 1.14;
 
   --font-md: 16px;
-  --font-md-lh: 1.375;
+  --font-md-lh: 1.25;
 
   --font-sm: 14px;
-  --font-sm-lh: 1.4;
+  --font-sm-lh: 1.3;
 
   --font-xs: 12px;
   --font-xs-lh: 1;

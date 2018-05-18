@@ -1,9 +1,10 @@
 import React from 'react';
-import { colors } from '../../utils';
+import PropTypes from 'prop-types';
+import { styles } from '../../utils';
 import { Card, Color, ColorText } from './styles';
 
-export default ({ color }) => {
-  const colorValue = color.includes('var') ? colors.getValue(color) : color;
+const ColorCard = ({ color }) => {
+  const colorValue = color.includes('var') ? styles.getValue(color) : color;
   return (
     <Card>
       <Color color={colorValue} />
@@ -11,3 +12,9 @@ export default ({ color }) => {
     </Card>
   );
 };
+
+ColorCard.propTypes = {
+  color: PropTypes.string.isRequired,
+};
+
+export default ColorCard;

@@ -8,6 +8,7 @@ export default () => (
       <Flexbox>
         <StyledButton>Primary</StyledButton>
         <StyledButton kind="accent">Accent</StyledButton>
+        <StyledButton kind="grey">Grey</StyledButton>
         <StyledButton kind="white">White</StyledButton>
         <StyledButton kind="info">Info</StyledButton>
         <StyledButton kind="success">Success</StyledButton>
@@ -20,6 +21,7 @@ export default () => (
       <Flexbox>
         <StyledButton ghost>Primary</StyledButton>
         <StyledButton ghost kind="accent">Accent</StyledButton>
+        <StyledButton ghost kind="grey">Grey</StyledButton>
         <StyledButton ghost kind="white">White</StyledButton>
         <StyledButton ghost kind="info">Info</StyledButton>
         <StyledButton ghost kind="success">Success</StyledButton>
