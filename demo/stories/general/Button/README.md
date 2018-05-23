@@ -1,12 +1,12 @@
 # Button
 
-| Nazwa     | Typ           | Wartość domyślna | Opis                									                                                                                                                                      |
+| Name      | Type          | Default value    | Description                									                                                                                                                              |
 |-----------|---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| children 	| node / string | ```''```				 | Zawartość przycisku.									                                                                                                                                      |
-| className | string 	      | ```''``` 		     | Klasa dodana do głównego komponentu. 							                                                                                                                        |
-| ghost 	  | bool 		      | ```false```      | Ustawienie na ```true``` tworzy przycisk z przezroczystym tłem. 	                                                                                                          |
-| kind 		  | string 	      | ```'primary'```  | Określa kolor przycisku. Możliwe wartości to: ```'primary'```, ```'accent'```, ```'grey'```, ```'white'```, ```'info'```, ```'success'```, ```'error'```, ```'warning'```. |
-| label 		| string 	      | ```''```         | Tekst w przycisku. Może zostać wykorzystany, gdy przycisk nie posiada ```children```                                                                                       |
-| onClick 	| function      | ```() => {}```   | Funkcja wykonywana po kliknięciu przycisku.				                                                                                                                        |
-| size 		  | string        | ```'md'``` 	     | Oreśla wysokość przycisku i wielkość fontu. Możliwe wartości to: ```'sm'```, ```'md'```, ```'lg'```.	                                                                      |
-| type 		  | string        | ```'button'```   | Odpowiednik atrybutu ```type``` w HTML.	                                                                                                                                  |
+| children 	| node / string | ```''```				 | Content inside the button.									                                                                                                                                |
+| className | string 	      | ```''``` 		     | Class added to the main component. 							                                                                                                                          |
+| ghost 	  | bool 		      | ```false```      | Setting on ```true``` creates a button with transparent background. 	                                                                                                      |
+| kind 		  | string 	      | ```'primary'```  | Determines background color. Possible values: ```'primary'```, ```'accent'```, ```'grey'```, ```'white'```, ```'info'```, ```'success'```, ```'error'```, ```'warning'```. |
+| label 		| string 	      | ```''```         | Content inside the button. Can be used instead of ```children```.                                                                                                          |
+| onClick 	| function      | ```() => {}```   | Callback when the button has been clicked.				                                                                                                                          |
+| size 		  | string        | ```'md'``` 	     | Dtetermines height and font size ot the button. Possible values: ```'sm'```, ```'md'```, ```'lg'```.	                                                                      |
+| type 		  | string        | ```'button'```   | Equivalent for HTML ```type``` attribute.	                                                                                                                                |

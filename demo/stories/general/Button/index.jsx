@@ -1,40 +1,35 @@
 import React from 'react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { Container, Flexbox, Section, Header, StyledButton } from '../../../helpers/styles';
 
+const kinds = {
+  primary: 'primary',
+  accent: 'accent',
+  white: 'white',
+  info: 'info',
+  success: 'success',
+  error: 'error',
+  warning: 'warning',
+  grey: 'grey',
+};
+
+const sizes = {
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+};
+
 export default () => (
-  <Container style={{ backgroundColor: '#333' }}>
+  <Container style={{ backgroundColor: '#333', height: '100vh' }}>
     <Section>
-      <Header style={{ color: '#fff' }}>Filled buttons</Header>
+      <Header style={{ color: '#fff' }}>Button</Header>
       <Flexbox>
-        <StyledButton>Primary</StyledButton>
-        <StyledButton kind="accent">Accent</StyledButton>
-        <StyledButton kind="grey">Grey</StyledButton>
-        <StyledButton kind="white">White</StyledButton>
-        <StyledButton kind="info">Info</StyledButton>
-        <StyledButton kind="success">Success</StyledButton>
-        <StyledButton kind="warning">Warning</StyledButton>
-        <StyledButton kind="error">Error</StyledButton>
-      </Flexbox>
-    </Section>
-    <Section>
-      <Header style={{ color: '#fff' }}>Ghost buttons</Header>
-      <Flexbox>
-        <StyledButton ghost>Primary</StyledButton>
-        <StyledButton ghost kind="accent">Accent</StyledButton>
-        <StyledButton ghost kind="grey">Grey</StyledButton>
-        <StyledButton ghost kind="white">White</StyledButton>
-        <StyledButton ghost kind="info">Info</StyledButton>
-        <StyledButton ghost kind="success">Success</StyledButton>
-        <StyledButton ghost kind="warning">Warning</StyledButton>
-        <StyledButton ghost kind="error">Error</StyledButton>
-      </Flexbox>
-    </Section>
-    <Section>
-      <Header style={{ color: '#fff' }}>Buttons sizes</Header>
-      <Flexbox>
-        <StyledButton size="lg">Large</StyledButton>
-        <StyledButton>Medium (default)</StyledButton>
-        <StyledButton size="sm">Small</StyledButton>
+        <StyledButton
+          ghost={boolean('ghost', false)}
+          kind={select('kind', kinds, 'primary')}
+          label={text('label', 'Button example')}
+          size={select('size', sizes, 'md')}
+        />
       </Flexbox>
     </Section>
   </Container>
