@@ -1,9 +1,9 @@
 # SVGIcon
 
-| Nazwa     | Typ               | Wartość domyślna | Opis                      |
-|-----------|-------------------|------------------|---------------------------|
-| **path** 	| string            | -		             | Ścieżka do pliku z ikoną. |
-| className | string 	          | ```''```				 | Klasa dodana do ikony.	   |
-| fill      | string 	          | ```''``` 		     | Kolor wypełnienia.        |
-| height 	  | string / number   | ```''``` 		     | Wysokość.	               |
-| width 		| string / number   | ```''``` 	       | Szerokość.                |
+| Name      | Type              | Default value    | Description                     |
+|-----------|-------------------|------------------|---------------------------------|
+| **path** 	| string            | -		             | Path to the file with SVG icon. |
+| className | string 	          | ```''```				 | Class added to the icon. 	     |
+| fill      | string 	          | ```''``` 		     | Fill color.                     |
+| height 	  | string / number   | ```''``` 		     | Height of the icon.	           |
+| width 		| string / number   | ```''``` 	       | Width of the icon.              |

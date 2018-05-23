@@ -1,5 +1,6 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
+import { WithFigma } from 'storybook-addon-figma'
 import { Container, Flexbox, Section, Header, StyledButton } from '../../../helpers/styles';
 
 const kinds = {
@@ -26,19 +27,21 @@ const types = {
 };
 
 export default () => (
-  <Container style={{ backgroundColor: '#333', height: '100vh' }}>
-    <Section>
-      <Header style={{ color: '#fff' }}>Button</Header>
-      <Flexbox>
-        <StyledButton
-          className={text('className', 'btn')}
-          ghost={boolean('ghost', false)}
-          kind={select('kind', kinds, 'primary')}
-          label={text('label', 'Button example')}
-          size={select('size', sizes, 'md')}
-          type={select('type', types, 'button')}
-        />
-      </Flexbox>
-    </Section>
-  </Container>
+  <WithFigma url="https://www.figma.com/file/cN9ICvikYvcorYB3MSFeTucF/General?node-id=1%3A2">
+    <Container style={{ backgroundColor: '#333', height: '100vh' }}>
+      <Section>
+        <Header style={{ color: '#fff' }}>Button</Header>
+        <Flexbox>
+          <StyledButton
+            className={text('className', 'btn')}
+            ghost={boolean('ghost', false)}
+            kind={select('kind', kinds, 'primary')}
+            label={text('label', 'Button example')}
+            size={select('size', sizes, 'md')}
+            type={select('type', types, 'button')}
+          />
+        </Flexbox>
+      </Section>
+    </Container>
+  </WithFigma>
 );
