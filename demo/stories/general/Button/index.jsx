@@ -19,16 +19,24 @@ const sizes = {
   lg: 'lg',
 };
 
+const types = {
+  button: 'button',
+  submit: 'submit',
+  reset: 'reset',
+};
+
 export default () => (
   <Container style={{ backgroundColor: '#333', height: '100vh' }}>
     <Section>
       <Header style={{ color: '#fff' }}>Button</Header>
       <Flexbox>
         <StyledButton
+          className={text('className', 'btn')}
           ghost={boolean('ghost', false)}
           kind={select('kind', kinds, 'primary')}
           label={text('label', 'Button example')}
           size={select('size', sizes, 'md')}
+          type={select('type', types, 'button')}
         />
       </Flexbox>
     </Section>
