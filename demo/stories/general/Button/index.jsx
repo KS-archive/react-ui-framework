@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import { WithFigma } from 'storybook-addon-figma'
+import { WithFigma } from 'storybook-addon-figma';
 import { Container, Flexbox, Section, Header, StyledButton } from '../../../helpers/styles';
 
 const kinds = {

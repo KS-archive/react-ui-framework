@@ -2,20 +2,20 @@
 
 ## ```<FAB />```
 
-| Nazwa     | Typ            | Wartość domyślna     | Opis                                                                                                                                                                                                    |
-|-----------|----------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| count 	  | number 	       | ```null```				    | Wartość licznika w górnym rogu przycisku. Wyświetlana tylko jeśli przycisk nie posiada ```items```.								                                                                                      |
-| **icon** 	| string 	       | -				            | Ścieżka do pliku z domyślną ikoną w przycisku.								                                                                                                                                          |
-| iconOpen 	| string 	       | ```''```				      | Ścieżka do pliku z ikoną wyświetlaną, gdy przycisk jest aktywny.								                                                                                                                        |
-| items 	  | array[object]  | ```[]```				      | Elementy rozwijane po aktywacji przycisku.								                                                                                                                                              |
-| offset 	  | array[number]  | ```[0, 0]```				  | Przesunięcie przycisku od pozycji domyślnej w [poziomie, pionie].								                                                                                                                        |
-| onClick 	| function 	     | ```() => {}```			  | Funkcja wykonywana po kliknięciu przycisku (o ile nie posiada ```items```).								                                                                                                              |
-| position 	| string 	       | ```'right bottom'``` | Domyślna pozycja na stronie. Możliwe wartości to: ```left top```, ```left center```, ```left bottom```, ```center top```, ```center bottom```, ```right top```, ```right center```, ```right bottom```. |
-| title 	  | string 	       | ```''```				      | Tytuł wyświetlany po najechaniu na przycisk.								                                                                                                                                            |
+| Name     | Type            | Default value     | Description                                                                                                                                                                                                    |
+|-----------|----------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **icon** 	| string 	       | -				            | Path to the file with default icon for button.								                                                                                                                                              |
+| count 	  | number 	       | ```null```				    | Value of the counter in top right corner of the button. Is showed only if button doesn't contain ```items```.								                                                                                |
+| iconOpen 	| string 	       | ```''```				      | Path to the file with icon which is showed when button is active.								                                                                                                                            |
+| items 	  | array[object]  | ```[]```				      | Elements showed after clicking on the button.								                                                                                                                                                |
+| offset 	  | array[number]  | ```[0, 0]```				  | Button translation from default position [horizontally, vertically].								                                                                                                                        |
+| onClick 	| function 	     | ```() => {}```			  | Callback when the button has been clicked (if it doesn't contain ```items```).								                                                                                                              |
+| position 	| string 	       | ```'right bottom'``` | Default button position on the page. Possible values: ```left top```, ```left center```, ```left bottom```, ```center top```, ```center bottom```, ```right top```, ```right center```, ```right bottom```. |
+| title 	  | string 	       | ```''```				      | Title showed after hovering the button.								                                                                                                                                                      |
 
 ## ```FAB item```
-| Nazwa     | Typ            | Wartość domyślna     | Opis                                            |
+| Name     | Type            | Default value     | Description                                        |
 |-----------|----------------|----------------------|-------------------------------------------------|
-| **icon** 	| string 	       | -				            | Ścieżka do pliku z domyślną ikoną w przycisku.  |
-| onClick 	| function 	     | ```() => {}```			  | Funkcja wykonywana po kliknięciu przycisku.     |
-| title 	  | string 	       | ```''```				      | Tytuł wyświetlany po najechaniu na przycisk.    |
+| **icon** 	| string 	       | -				            | Path to the file with default icon for button.	|
+| onClick 	| function 	     | ```() => {}```			  | Callback when the button has been clicked.      |
+| title 	  | string 	       | ```''```				      | Title showed after hovering the button.			    |

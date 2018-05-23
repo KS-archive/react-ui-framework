@@ -9,6 +9,7 @@ import SVGIcon from './SVGIcon';
 import SVGIconReadme from './SVGIcon/README.md';
 
 const stories = storiesOf('General', module);
+
 stories.addDecorator(withKnobs);
 stories.addDecorator(story => <Index>{story()}</Index>);
 stories.add('Button', withReadme(ButtonReadme, props => <Button {...props} />));

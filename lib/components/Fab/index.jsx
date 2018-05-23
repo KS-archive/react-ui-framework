@@ -73,16 +73,18 @@ class Fab extends PureComponent {
   }
 
   render() {
-    const { props: { icon, title, items, count, iconOpen, position, offset }, state: { open } } = this;
+    console.log(this.props.offset);
+    const { props: { className, icon, title, items, count, iconOpen, position, offset }, state: { open } } = this;
     return (
       <Container
+        className={className}
         onClick={this.handleClick}
         open={open}
         innerRef={(x) => { this.fab = x; }}
         position={position}
         offset={offset}
       >
-        <Badge count={items.length === 0 ? count : null}>
+        <Badge count={count}>
           <BigFab disabled={open} title={title} position={getTooltipPosition(position)} touchHold>
             <ReactSVG path={icon} />
             <ReactSVG path={iconOpen || icon} />
@@ -95,6 +97,7 @@ class Fab extends PureComponent {
 }
 
 Fab.propTypes = {
+  className: PropTypes.string,
   count: PropTypes.number,
   icon: PropTypes.string.isRequired,
   iconOpen: PropTypes.string,
@@ -110,6 +113,7 @@ Fab.propTypes = {
 };
 
 Fab.defaultProps = {
+  className: '',
   count: null,
   iconOpen: '',
   items: [],
