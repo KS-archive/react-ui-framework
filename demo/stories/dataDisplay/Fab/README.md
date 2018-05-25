@@ -14,7 +14,7 @@
 | title 	  | string 	       | ```''```				      | Title showed after hovering the button.								                                                                                                                                                      |
 
 ## ```FAB item```
-| Name     | Type            | Default value     | Description                                        |
+| Name      | Type           | Default value        | Description                                     |
 |-----------|----------------|----------------------|-------------------------------------------------|
 | **icon** 	| string 	       | -				            | Path to the file with default icon for button.	|
 | onClick 	| function 	     | ```() => {}```			  | Callback when the button has been clicked.      |

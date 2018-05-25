@@ -35,7 +35,7 @@ const positions = {
 const offset = [0, 0];
 
 export default () => (
-  <WithFigma url="https://www.figma.com/file/cN9ICvikYvcorYB3MSFeTucF/General?node-id=1%3A3">
+  <WithFigma url="https://www.figma.com/file/UiPAHOSZM4nMLzzICmhlUHle/Data-display?node-id=93%3A2">
     <Container>
       <Fab
         className={text('className', 'fab')}

@@ -73,7 +73,6 @@ class Fab extends PureComponent {
   }
 
   render() {
-    console.log(this.props.offset);
     const { props: { className, icon, title, items, count, iconOpen, position, offset }, state: { open } } = this;
     return (
       <Container
