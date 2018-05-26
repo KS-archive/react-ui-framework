@@ -1,6 +1,6 @@
 # Floating Action Button (FAB)
 
-## ```<FAB />```
+## ```<Fab />```
 
 | Name     | Type            | Default value     | Description                                                                                                                                                                                                    |
 |-----------|----------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -13,7 +13,7 @@
 | position 	| string 	       | ```'right bottom'``` | Default button position on the page. Possible values: ```left top```, ```left center```, ```left bottom```, ```center top```, ```center bottom```, ```right top```, ```right center```, ```right bottom```. |
 | title 	  | string 	       | ```''```				      | Title showed after hovering the button.								                                                                                                                                                      |
 
-## ```FAB item```
+## ```Fab item```
 | Name      | Type           | Default value        | Description                                     |
 |-----------|----------------|----------------------|-------------------------------------------------|
 | **icon** 	| string 	       | -				            | Path to the file with default icon for button.	|
