@@ -1,10 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
 import { Index } from 'react-ui-framework';
 import Input from './Input';
+import InputReadme from './Input/README.md';
 import Select from './Select';
+import SelectReadme from './Select/README.md';
 
-storiesOf('Data entry', module)
-  .addDecorator(story => <Index>{story()}</Index>)
-  .add('Input', () => <Input />)
-  .add('Select', () => <Select />);
+const stories = storiesOf('Data entry', module);
+
+stories.addDecorator(withKnobs);
+stories.addDecorator(story => <Index>{story()}</Index>);
+stories.add('Input', withReadme(InputReadme, props => <Input {...props} />));
+stories.add('Select', withReadme(SelectReadme, props => <Select {...props} />));

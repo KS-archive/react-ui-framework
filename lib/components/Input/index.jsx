@@ -37,13 +37,13 @@ class Input extends PureComponent {
 
   render() {
     const {
-      handleBlur, handleFocus, handleChange,
-      state: { focused, filled, value, pristine },
-      props: { label, className, style, type, error },
+      handleBlur, handleChange, handleFocus,
+      state: { filled, focused, pristine, value },
+      props: { className, error, label, style, type },
     } = this;
 
     return (
-      <InputWrapper focused={focused} filled={filled} error={error} pristine={pristine}>
+      <InputWrapper error={error} filled={filled} focused={focused} pristine={pristine}>
         <div className="border">
           <div />
         </div>
@@ -65,28 +65,29 @@ class Input extends PureComponent {
 }
 
 Input.propTypes = {
-  value: PropTypes.string,
-  label: PropTypes.string.isRequired,
   className: PropTypes.string,
-  style: PropTypes.object,
-  type: PropTypes.oneOf(['text', 'password', 'email', 'search', 'tel', 'url']),
   error: PropTypes.string,
-  pristine: PropTypes.bool,
-  onFocus: PropTypes.func,
+  label: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  pristine: PropTypes.bool,
+  style: PropTypes.object,
+  type: PropTypes.oneOf(['text', 'password', 'email', 'search', 'tel', 'url']),
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
-  value: '',
   className: '',
-  style: {},
-  type: 'text',
   error: '',
-  pristine: true,
-  onFocus: () => {},
+  label: '',
   onBlur: () => {},
   onChange: () => {},
+  onFocus: () => {},
+  pristine: true,
+  style: {},
+  type: 'text',
+  value: '',
 };
 
 export default Input;
