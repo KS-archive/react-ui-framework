@@ -1,0 +1,17 @@
+.tippy-tooltip--big {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-lg);
+  font-weight: var(--regular);
+}
+
+.tippy-tooltip--regular {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-md);
+  font-weight: var(--regular);
+}
+
+.tippy-tooltip--small {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-sm);
+  font-weight: var(--regular);
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, number, object, array, select } from '@storybook/addon-knobs';
+import { text, number, object, select } from '@storybook/addon-knobs';
 import { WithFigma } from 'storybook-addon-figma';
 import { Fab } from 'react-ui-framework';
 import { Container } from '../../../helpers/styles';

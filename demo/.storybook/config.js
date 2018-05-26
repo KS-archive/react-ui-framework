@@ -1,4 +1,11 @@
 import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
+
+setOptions({
+  name: 'React UI Framework',
+  url: 'https://github.com/KonradSzwarc/react-ui-framework',
+  addonPanelInRight: true,
+});
 
 function loadStories() {
   require('../stories/layout');
