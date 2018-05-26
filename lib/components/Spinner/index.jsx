@@ -11,21 +11,22 @@ const sizes = {
   xxl: 96,
 };
 
-const Spinner = ({ className, duration, size, style }) => (
+const Spinner = ({ className, colors, duration, size, style }) => (
   <MDSpinner
     className={className}
     duration={duration}
     size={sizes[size]}
     style={style}
-    color1="var(--primary1)"
-    color2="var(--primary2)"
-    color3="var(--primary3)"
-    color4="var(--primary2)"
+    color1={colors[0]}
+    color2={colors[1] || colors[0]}
+    color3={colors[2] || colors[1] || colors[0]}
+    color4={colors[3] || colors[2] || colors[1] || colors[0]}
   />
 );
 
 Spinner.propTypes = {
   className: PropTypes.string,
+  colors: PropTypes.arrayOf(PropTypes.string),
   duration: PropTypes.number,
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
   style: PropTypes.object,
@@ -33,6 +34,7 @@ Spinner.propTypes = {
 
 Spinner.defaultProps = {
   className: '',
+  colors: ['var(--primary1)', 'var(--primary2)', 'var(--primary3)', 'var(--primary2)'],
   duration: 1200,
   size: 'md',
   style: {},
