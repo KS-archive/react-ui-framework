@@ -11,6 +11,6 @@ import GridReadme from './Grid/README.md';
 const stories = storiesOf('Layout', module);
 
 stories.addDecorator(withKnobs);
-stories.addDecorator(story => <Index>{story()}</Index>);
+stories.addDecorator(story => <Index fa={__FONT_AWESOME__}>{story()}</Index>);
 stories.add('Colors', withReadme(ColorsReadme, props => <Colors {...props} />));
 stories.add('Grid', withReadme(GridReadme, props => <Grid {...props} />));

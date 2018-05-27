@@ -11,6 +11,6 @@ import SVGIconReadme from './SVGIcon/README.md';
 const stories = storiesOf('General', module);
 
 stories.addDecorator(withKnobs);
-stories.addDecorator(story => <Index>{story()}</Index>);
+stories.addDecorator(story => <Index fa={__FONT_AWESOME__}>{story()}</Index>);
 stories.add('Button', withReadme(ButtonReadme, props => <Button {...props} />));
 stories.add('SVGIcon', withReadme(SVGIconReadme, props => <SVGIcon {...props} />));

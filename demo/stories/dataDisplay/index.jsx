@@ -13,7 +13,7 @@ import TooltipReadme from './Tooltip/README.md';
 const stories = storiesOf('Data display', module);
 
 stories.addDecorator(withKnobs);
-stories.addDecorator(story => <Index>{story()}</Index>);
+stories.addDecorator(story => <Index fa={__FONT_AWESOME__}>{story()}</Index>);
 stories.add('Fab', withReadme(FabReadme, props => <Fab {...props} />));
 stories.add('Spinner', withReadme(SpinnerReadme, props => <Spinner {...props} />));
 stories.add('Tooltip', withReadme(TooltipReadme, props => <Tooltip {...props} />));
