@@ -1,7 +1,7 @@
 import React from 'react';
 import { WithFigma } from 'storybook-addon-figma';
 import { text, object } from '@storybook/addon-knobs';
-import { CheckboxGroup } from 'react-ui-framework';
+import { RadioGroup } from 'react-ui-framework';
 import { Container, Section, Flexbox, Header } from '../../../helpers/styles';
 
 const items = [
@@ -12,13 +12,13 @@ const items = [
 ];
 
 export default () => (
-  <WithFigma url="https://www.figma.com/file/bor49SDepwdNyVxh4nKtU4fw/Data-entry?node-id=1%3A2">
+  <WithFigma url="https://www.figma.com/file/bor49SDepwdNyVxh4nKtU4fw/Data-entry?node-id=1%3A3">
     <Container>
       <Section>
-        <Header>Checkbox group</Header>
+        <Header>Radio group</Header>
         <Flexbox>
-          <CheckboxGroup
-            className={text('className', 'checkboxGroupClass')}
+          <RadioGroup
+            className={text('className', 'RadioGroupClass')}
             error={text('error', '')}
             items={object('items', items)}
             style={object('style', {})}

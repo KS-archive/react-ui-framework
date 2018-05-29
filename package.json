@@ -82,6 +82,7 @@
     "npm": "^6.0.0",
     "prop-types": "^15.6.1",
     "query-string": "^6.1.0",
-    "react-sizeme": "^2.4.3"
+    "react-sizeme": "^2.4.3",
+    "uuid": "^3.2.1"
   }
 }

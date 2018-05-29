@@ -21,10 +21,10 @@ class Checkbox extends PureComponent {
     const { onChange, state: { checked }, props: { className, error, label, name, style } } = this;
 
     return (
-      <Container className={className} error={error} style={style}>
+      <Container className={className} error={error} onClick={onChange} style={style}>
         <Label>{label}</Label>
         <Input checked={checked} onChange={onChange} name={name} type="checkbox" />
-        <Checkmark className="fa" onClick={onChange} />
+        <Checkmark className="fa" />
         <div className="error">{error}</div>
       </Container>
     );
