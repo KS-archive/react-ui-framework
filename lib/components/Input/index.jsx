@@ -39,7 +39,7 @@ class Input extends PureComponent {
     const {
       handleBlur, handleChange, handleFocus,
       state: { filled, focused, pristine, value },
-      props: { className, error, label, style, type },
+      props: { className, error, label, name, style, type },
     } = this;
 
     return (
@@ -49,7 +49,7 @@ class Input extends PureComponent {
         </div>
         <label htmlFor={label}>{label}</label>
         <input
-          name={label}
+          name={name}
           className={className}
           style={style}
           type={type}
@@ -68,6 +68,7 @@ Input.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   label: PropTypes.string,
+  name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,

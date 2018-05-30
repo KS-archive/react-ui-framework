@@ -23,6 +23,7 @@ export default () => (
             className={text('className', 'inputClass')}
             error={text('error', '')}
             label={text('label', 'E-mail')}
+            name={text('name', 'email')}
             style={object('style', {})}
             type={select('type', types, 'text')}
             value={text('value', '')}

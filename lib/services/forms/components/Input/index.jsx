@@ -18,6 +18,7 @@ export default class Input extends PureComponent {
   }
 
   render() {
+    console.log(this.props);
     const {
       input, label, meta: { touched, error }, className, validating, type,
     } = this.props;
@@ -25,6 +26,7 @@ export default class Input extends PureComponent {
     return (
       <InputBase
         className={className}
+        name={input.name}
         onFocus={input.onFocus}
         onChange={this.change}
         onBlur={this.blur}

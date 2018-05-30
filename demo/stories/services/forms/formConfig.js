@@ -10,4 +10,18 @@ export default {
       },
     },
   },
+  terms: {
+    type: 'Checkbox',
+    extend: {
+      label: 'I agrre with the terms of service.',
+      style: {
+        marginTop: 16,
+      },
+    },
+    validation: {
+      required: {
+        message: 'You must accept terms of service',
+      },
+    },
+  },
 };

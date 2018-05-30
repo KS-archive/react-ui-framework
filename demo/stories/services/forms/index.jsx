@@ -17,6 +17,7 @@ export default class Form extends PureComponent {
     return (
       <Container>
         <Field name="email" />
+        <Field name="terms" />
       </Container>
     );
   }

@@ -2,6 +2,7 @@
 
 | Name      | Type      | Default value   | Description                                         |
 |-----------|-----------|-----------------|-----------------------------------------------------|
+| **name**	| string 	  | -				        | Name of the input. 	                                |
 | className	| string 	  | ```''```				| Class added to the input component. 	              |
 | error 	  | string 	  | ```''```				| Text of the error (if any exist).			              |
 | label 	  | string 	  | ```''```				| Name of the field.			                            |
