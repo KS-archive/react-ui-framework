@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox';
-import { Container, Items, Error } from './styles';
+import { Container, Label, Items, Error } from './styles';
 
 class ChceckboxGroup extends PureComponent {
   static getDerivedStateFromProps(props, state) {
@@ -20,6 +20,7 @@ class ChceckboxGroup extends PureComponent {
   onChange = (name, value) => {
     const newValue = { ...this.state.value, [name]: value };
     this.setState({ value: newValue });
+    this.props.onChange(newValue);
   }
 
   renderCheckbox = item => (
@@ -33,12 +34,9 @@ class ChceckboxGroup extends PureComponent {
 
   render() {
     return (
-      <Container>
-        <Items
-          className={this.props.className}
-          error={this.props.error}
-          style={this.props.style}
-        >
+      <Container style={this.props.style} className={this.props.className}>
+        {this.props.label && <Label>{this.props.label}</Label>}
+        <Items>
           {this.props.items.map(this.renderCheckbox)}
         </Items>
         <Error error={this.props.error}>{this.props.error}</Error>
@@ -51,6 +49,8 @@ ChceckboxGroup.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   style: PropTypes.object,
   value: PropTypes.object,
 };
@@ -58,6 +58,7 @@ ChceckboxGroup.propTypes = {
 ChceckboxGroup.defaultProps = {
   className: '',
   error: '',
+  onChange: () => {},
   style: {},
   value: {},
 };

@@ -1,22 +1,22 @@
 import React, { PureComponent } from 'react';
-import CheckboxBase from '../../../../components/Checkbox';
+import CheckboxGroupBase from '../../../../components/CheckboxGroup';
 
-export default class Checkbox extends PureComponent {
+export default class CheckboxGroup extends PureComponent {
   change = value => this.props.input.onChange(value);
 
   render() {
     const {
-      input, label, meta: { touched, error }, className, style,
+      input, label, meta: { touched, error }, className, style, items,
     } = this.props;
-    console.log(this.props);
 
     return (
-      <CheckboxBase
+      <CheckboxGroupBase
         className={className}
         onChange={this.change}
+        items={items}
         label={label}
         name={input.name}
-        checked={input.value}
+        value={input.value}
         error={touched && error}
         style={style}
       />

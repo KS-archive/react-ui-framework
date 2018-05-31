@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { WithFigma } from 'storybook-addon-figma';
 import { Container, Flexbox, Section, Header, StyledButton } from '../../../helpers/styles';
 
@@ -38,6 +38,7 @@ export default () => (
             kind={select('kind', kinds, 'primary')}
             label={text('label', 'Button example')}
             size={select('size', sizes, 'md')}
+            style={object('style', {})}
             type={select('type', types, 'button')}
           />
         </Flexbox>

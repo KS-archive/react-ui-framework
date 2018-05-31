@@ -9,4 +9,5 @@
 | label 		| string 	      | ```''```         | Content inside the button. Can be used instead of ```children```.                                                                                                          |
 | onClick 	| function      | ```() => {}```   | Callback when the button has been clicked.				                                                                                                                          |
 | size 		  | string        | ```'md'``` 	     | Dtetermines height and font size ot the button. Possible values: ```'sm'```, ```'md'```, ```'lg'```.	                                                                      |
+| style 		| object        | ```{}``` 	       | Additional styles for the main component.	                                                                                                                                |
 | type 		  | string        | ```'button'```   | Equivalent for HTML ```type``` attribute.	                                                                                                                                |
