@@ -24,21 +24,44 @@ export default {
       },
     },
   },
-  sex: {
+  interests: {
     type: 'CheckboxGroup',
     extend: {
-      label: 'Sex',
+      label: 'Interests',
       style: {
         marginTop: 16,
       },
       items: [
-        { label: 'Male', name: 'male' },
-        { label: 'Female', name: 'female', style: { marginTop: 8 } },
+        { label: 'Art', name: 'art' },
+        { label: 'Economy', name: 'economy', style: { marginTop: 8 } },
+        { label: 'Sport', name: 'sport', style: { marginTop: 8 } },
       ],
     },
     validation: {
       required: {
-        message: 'You must choose your sex.',
+        message: 'You must choose your interests.',
+      },
+    },
+  },
+  size: {
+    type: 'Select',
+    extend: {
+      label: 'Size',
+      style: {
+        marginTop: 16,
+      },
+      items: [
+        { label: 'XXL', value: 'XXL' },
+        { label: 'XL', value: 'XL' },
+        { label: 'LG', value: 'LG' },
+        { label: 'MD', value: 'MD' },
+        { label: 'SM', value: 'SM' },
+        { label: 'XS', value: 'XS' },
+      ],
+    },
+    validation: {
+      required: {
+        message: 'You must choose your size.',
       },
     },
   },

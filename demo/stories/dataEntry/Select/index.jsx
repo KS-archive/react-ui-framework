@@ -9,7 +9,8 @@ export default () => (
       <Flexbox>
         <Select
           label="E-mail"
-          options={[
+          name="email"
+          items={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' },
           ]}

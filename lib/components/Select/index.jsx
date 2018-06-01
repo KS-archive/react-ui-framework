@@ -36,7 +36,7 @@ class Select extends PureComponent {
     const {
       handleBlur, handleChange, handleFocus,
       state: { filled, focused, pristine, value },
-      props: { autoBlur, autoFocus, className, clearable, error, label, options, searchable, style },
+      props: { autoBlur, autoFocus, className, clearable, error, label, name, items, searchable, style },
     } = this;
 
     return (
@@ -56,13 +56,13 @@ class Select extends PureComponent {
           autoBlur={autoBlur}
           autoFocus={autoFocus}
           clearable={clearable}
-          name={label}
+          name={name}
           value={value}
           placeholder=""
           onChange={handleChange}
           onBlur={handleBlur}
           onFocus={handleFocus}
-          options={options}
+          options={items}
           searchable={searchable}
         />
         <div className="error">{error}</div>
@@ -78,10 +78,11 @@ Select.propTypes = {
   clearable: PropTypes.bool,
   error: PropTypes.string,
   label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.shape({
+  items: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   })),
@@ -100,7 +101,7 @@ Select.defaultProps = {
   onFocus: () => {},
   onBlur: () => {},
   onChange: () => {},
-  options: [],
+  items: [],
   pristine: true,
   searchable: false,
   style: {},
