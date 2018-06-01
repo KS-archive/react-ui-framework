@@ -21,6 +21,7 @@ export default class Form extends PureComponent {
         <Field name="terms" />
         <Field name="interests" />
         <Field name="size" />
+        <Field name="sex" />
         <Button label="Submit" onClick={this.props.handleSubmit(this.onSubmit)} style={{ marginTop: 16 }} />
       </Container>
     );

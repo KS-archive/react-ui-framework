@@ -65,4 +65,22 @@ export default {
       },
     },
   },
+  sex: {
+    type: 'RadioGroup',
+    extend: {
+      label: 'Sex',
+      style: {
+        marginTop: 16,
+      },
+      items: [
+        { label: 'Male', name: 'male' },
+        { label: 'Female', name: 'female' },
+      ],
+    },
+    validation: {
+      required: {
+        message: 'You must choose your sex.',
+      },
+    },
+  },
 };
