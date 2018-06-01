@@ -36,7 +36,7 @@ Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
   className: PropTypes.string,
   checked: PropTypes.bool,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   onChange: PropTypes.func,
   style: PropTypes.object,
 };

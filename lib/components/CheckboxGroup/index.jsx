@@ -27,6 +27,7 @@ class ChceckboxGroup extends PureComponent {
     <Checkbox
       {...item}
       key={item.name}
+      error={!!this.props.error}
       checked={this.state.value[item.name]}
       onChange={value => this.onChange(item.name, value)}
     />
