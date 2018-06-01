@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Ghost, Filled } from './styles';
 
-const Button = ({ ghost, type, onClick, children, kind, className, size, label, style }) => {
+const Button = ({ children, className, ghost, kind, label, onClick, size, style, type }) => {
   const Component = ghost ? Ghost : Filled;
   return (
     <Component

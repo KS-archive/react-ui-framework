@@ -1,49 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import WebfontLoader from '@dr-kobros/react-webfont-loader';
 import { Scrollbars } from 'react-custom-scrollbars';
 import NotificationsSystem from 'reapop';
 
 import 'react-tippy/dist/tippy.css';
 import 'react-select/dist/react-select.css';
-
-import { styles } from '../../utils';
-import theme from '../../services/notifications/theme';
-import enhanceHead from '../../helpers/enhanceHead';
-import { Container, Body } from './styles';
 import '../../styles.css';
 
-let isFontAwesomeLoaded = false;
+import getFontAwesome from './getFontAwesome';
+import theme from '../../services/notifications/theme';
+import { Container, Body } from './styles';
 
-const getFontAwesome = (fa) => {
-  if (fa === 'free') {
-    enhanceHead('link', {
-      rel: 'stylesheet',
-      href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css',
-      integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9',
-      crossorigin: 'anonymous',
-    });
-    styles.setValue('--fa-light', '600');
-  } else if (fa === 'local') {
-    enhanceHead('link', {
-      rel: 'stylesheet prefetch',
-      href: 'https://static.fontawesome.com/css/fontawesome-app.css',
-    });
-    enhanceHead('link', {
-      rel: 'stylesheet prefetch',
-      href: 'https://pro-staging.fontawesome.com/releases/v5.0.8/css/all.css',
-    });
-    styles.setValue('--fa-light', '300');
-  } else {
-    enhanceHead('link', {
-      rel: 'stylesheet',
-      href: 'https://pro.fontawesome.com/releases/v5.0.12/css/all.css',
-      integrity: fa,
-      crossorigin: 'anonymous',
-    });
-    styles.setValue('--fa-light', '300');
-  }
-  isFontAwesomeLoaded = true;
-};
+let isFontAwesomeLoaded = false;
 
 const config = {
   google: {
@@ -54,9 +23,9 @@ const config = {
   },
 };
 
-export default ({ children, before, after, notifications, className, bodyClassName, fa = 'free' }) => {
+const Index = ({ after, before, bodyClassName, children, className, fa, notifications }) => {
   if (!isFontAwesomeLoaded) {
-    getFontAwesome(fa);
+    isFontAwesomeLoaded = getFontAwesome(fa, isFontAwesomeLoaded);
   }
 
   return (
@@ -74,3 +43,24 @@ export default ({ children, before, after, notifications, className, bodyClassNa
     </WebfontLoader>
   );
 };
+
+Index.propTypes = {
+  after: PropTypes.node,
+  before: PropTypes.node,
+  bodyClassName: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.node,
+  fa: PropTypes.string,
+  notifications: PropTypes.bool,
+};
+
+Index.defaultProps = {
+  after: null,
+  before: null,
+  bodyClassName: '',
+  className: '',
+  fa: 'free',
+  notifications: false,
+}
+
+export default Index;

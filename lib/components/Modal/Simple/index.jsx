@@ -10,31 +10,29 @@ const sizeMeHOC = sizeMe({
   refreshRate: 100,
 });
 
-const SimpleDialog = ({ width, duration, animationName, animationType, color, showCloseButton, onClose, icon, title, buttons, children, size: { height } }) => {
-  return (
-    <StyledDialog
-      width={width}
-      duration={duration}
-      animationName={animationName}
-      animationType={animationType}
-      color={color}
-      overSize={window.innerHeight < (height + 80)}
-    >
-      {showCloseButton && <CloseButton className="fa fa-times" onClick={onClose} />}
-      <Header>
-        {icon && <SVGIcon path={icon} fill={color} width={24} height={24} />}
-        <Title>{title}</Title>
-      </Header>
-      <Content>
-        {children}
-      </Content>
-      {buttons.length > 0 &&
-        <Footer>
-          {buttons.map(button => <Button key={button.label} size="sm" {...button} />)}
-        </Footer>
-      }
-    </StyledDialog>
-  );
-};
+const SimpleDialog = ({
+  animationName, animationType, buttons, children, color, duration, icon, onClose, showCloseButton, size, title, width
+}) => (
+  <StyledDialog
+    width={width}
+    duration={duration}
+    animationName={animationName}
+    animationType={animationType}
+    color={color}
+    overSize={window.innerHeight < (size.height + 80)}
+  >
+    {showCloseButton && <CloseButton className="fa fa-times" onClick={onClose} />}
+    <Header>
+      {icon && <SVGIcon path={icon} fill={color} width={24} height={24} />}
+      <Title>{title}</Title>
+    </Header>
+    <Content>{children}</Content>
+    {buttons.length > 0 &&
+      <Footer>
+        {buttons.map(button => <Button key={button.label} size="sm" {...button} />)}
+      </Footer>
+    }
+  </StyledDialog>
+);
 
 export default sizeMeHOC(SimpleDialog);

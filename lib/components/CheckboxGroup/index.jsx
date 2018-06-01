@@ -34,13 +34,15 @@ class ChceckboxGroup extends PureComponent {
   );
 
   render() {
+    const { className, error, items, label, style } = this.props;
+
     return (
-      <Container style={this.props.style} className={this.props.className}>
-        {this.props.label && <Label>{this.props.label}</Label>}
+      <Container style={style} className={className}>
+        {label && <Label>{label}</Label>}
         <Items>
-          {this.props.items.map(this.renderCheckbox)}
+          {items.map(this.renderCheckbox)}
         </Items>
-        <Error error={this.props.error}>{this.props.error}</Error>
+        <Error error={error}>{error}</Error>
       </Container>
     );
   }
@@ -50,6 +52,7 @@ ChceckboxGroup.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   style: PropTypes.object,
@@ -59,6 +62,7 @@ ChceckboxGroup.propTypes = {
 ChceckboxGroup.defaultProps = {
   className: '',
   error: '',
+  label: '',
   onChange: () => {},
   style: {},
   value: {},

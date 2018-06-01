@@ -7,12 +7,12 @@ class Radio extends PureComponent {
   id = uuid();
 
   render() {
-    const { className, checked, label, name, onClick, style } = this.props;
+    const { className, checked, error, label, name, onClick, style } = this.props;
 
     return (
       <Container className={className} onClick={onClick} style={style}>
         <Input type="radio" checked={checked} name={name} id={this.id} />
-        <Check />
+        <Check error={error} />
         <Label for={this.id} onClick={onClick}>{label}</Label>
       </Container>
     );
@@ -22,6 +22,7 @@ class Radio extends PureComponent {
 Radio.propTypes = {
   checked: PropTypes.bool,
   className: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
@@ -31,6 +32,7 @@ Radio.propTypes = {
 Radio.defaultProps = {
   checked: false,
   className: '',
+  error: '',
   onClick: () => {},
   style: {},
 };

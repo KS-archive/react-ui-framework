@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import withRouter from 'react-router/withRouter';
 import queryString from 'query-string';
+import { omit } from 'ramda';
 import { setSearch } from './actions';
-import { objRemove } from '../../utils/immutable';
 
 export default (WrappedComponent) => {
 
@@ -21,7 +21,7 @@ export default (WrappedComponent) => {
         this.setSearch(queryString.parse(np.location.search));
       }
       if (np.search !== this.props.search) {
-        const urlNewParams = np.search.query ? np.search : objRemove(np.search, 'query');
+        const urlNewParams = np.search.query ? np.search : omit(['query'], np.search);
         np.history.push({
           pathname: np.history.location.pathname,
           search: queryString.stringify(urlNewParams),

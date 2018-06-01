@@ -69,26 +69,35 @@ class Grid extends Component {
       const columns = String(childSize).includes('/') ? getSizeFromColumns(childSize) : validateSize(childSize);
       lastSize = columns || lastSize;
       lastOffset = child.props[`${size}-offset`] || lastOffset;
+
       const sum = this.startColumns[size] + lastOffset + lastSize;
-      const [start, end] = (sum > 13) ? [1 + lastOffset, 1 + lastSize + lastOffset] : [this.startColumns[size] + lastOffset, sum];
+      const [start, end] = (sum > 13)
+        ? [1 + lastOffset, 1 + lastSize + lastOffset]
+        : [this.startColumns[size] + lastOffset, sum];
+
       child.props[size] = `${start}/${end}`;
       this.startColumns[size] = end;
     });
   }
 
   render() {
-    if (!this.initialized) {
+    const {
+      initialized,
+      props: { className, fluid, children, style },
+    } = this;
+
+    if (!initialized) {
       this.constantProps = this.props;
       this.initialized = true;
     }
 
     return (
       <GridContainer
-        className={this.props.className}
-        fluid={this.props.fluid}
-        style={this.props.style}
+        className={className}
+        fluid={fluid}
+        style={style}
       >
-        {this.props.children}
+        {children}
       </GridContainer>
     );
   }

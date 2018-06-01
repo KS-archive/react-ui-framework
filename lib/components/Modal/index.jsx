@@ -11,7 +11,9 @@ class Modal extends PureComponent {
   };
 
   componentDidMount() {
-    if (this.props.visible) this.enter();
+    if (this.props.visible) {
+      this.enter();
+    }
   }
 
   componentWillReceiveProps({ visible }) {
@@ -20,34 +22,36 @@ class Modal extends PureComponent {
     if (wasVisible && !isVisible) this.leave();
   }
 
-  componentDidUpdate(pp) {
-    console.log(this.props.title);
-    if (!pp.visible && this.props.visible) {
+  componentDidUpdate({ visible }) {
+    if (!visible && this.props.visible) {
       this.scrollbars.scrollToTop();
     }
   }
 
   onKeyUp = ({ keyCode }) => (keyCode === 27) && this.props.onClose();
 
-  enter = () => {
-    this.setState({ isShow: true, animationType: 'enter' });
-  }
+  enter = () => this.setState({ isShow: true, animationType: 'enter' });
 
   leave = () => this.setState({ animationType: 'leave' });
 
   animationEnd = ({ target }) => {
     const { state: { animationType }, props: { onAnimationEnd }, container } = this;
 
-    if (animationType === 'leave') this.setState({ isShow: false });
-    else container.focus();
+    if (animationType === 'leave') {
+      this.setState({ isShow: false });
+    } else {
+      container.focus();
+    }
 
-    if (target === container && onAnimationEnd) onAnimationEnd();
+    if (target === container && onAnimationEnd) {
+      onAnimationEnd();
+    }
   }
 
   render() {
     const {
-      props: { onClose, duration, children, enterAnimation, leaveAnimation, animation, showCloseButton, width, title, icon, color, buttons },
-      state: { isShow, animationType },
+      props: { animation, buttons, children, color, duration, enterAnimation, icon, leaveAnimation, onClose, showCloseButton, title, width },
+      state: { animationType, isShow },
     } = this;
     const animationName = (animationType === 'enter' ? enterAnimation : leaveAnimation) || animation;
 
@@ -84,34 +88,34 @@ class Modal extends PureComponent {
 }
 
 Modal.propTypes = {
-  children: PropTypes.node.isRequired,
-  width: PropTypes.number,
-  visible: PropTypes.bool,
-  showCloseButton: PropTypes.bool,
   animation: PropTypes.string,
-  enterAnimation: PropTypes.string,
-  leaveAnimation: PropTypes.string,
-  duration: PropTypes.number,
-  onClose: PropTypes.func.isRequired,
-  onAnimationEnd: PropTypes.func,
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-  color: PropTypes.string,
   buttons: PropTypes.array,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  duration: PropTypes.number,
+  enterAnimation: PropTypes.string,
+  icon: PropTypes.string,
+  leaveAnimation: PropTypes.string,
+  onAnimationEnd: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
+  showCloseButton: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  visible: PropTypes.bool,
+  width: PropTypes.number,
 };
 
 Modal.defaultProps = {
-  width: 456,
-  visible: false,
-  showCloseButton: true,
   animation: 'fade',
-  enterAnimation: '',
-  leaveAnimation: '',
-  duration: 300,
-  onAnimationEnd: () => {},
-  icon: '',
-  color: 'var(--primary2)',
   buttons: [],
+  color: 'var(--primary2)',
+  duration: 300,
+  enterAnimation: '',
+  icon: '',
+  leaveAnimation: '',
+  onAnimationEnd: () => {},
+  showCloseButton: true,
+  visible: false,
+  width: 456,
 };
 
 export default Modal;

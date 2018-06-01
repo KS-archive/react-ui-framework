@@ -73,7 +73,10 @@ class Fab extends PureComponent {
   }
 
   render() {
-    const { props: { className, icon, title, items, count, iconOpen, position, offset }, state: { open } } = this;
+    const {
+      props: { className, icon, title, items, count, iconOpen, position, offset },
+      state: { open },
+    } = this;
     return (
       <Container
         className={className}
@@ -89,7 +92,7 @@ class Fab extends PureComponent {
             <ReactSVG path={iconOpen || icon} />
           </BigFab>
         </Badge>
-        {items.map((p, i) => renderSmallFab(p, i, position, this.state.open))}
+        {items.map((p, i) => renderSmallFab(p, i, position, open))}
       </Container>
     );
   }

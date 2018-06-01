@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import StyledSVG from './styles';
 
 const SVGIcon = ({ path, width, height, fill, className }) => (
-  <StyledSVG
-    path={path}
-    width={width}
-    height={height}
-    fill={fill}
-    svgClassName={className}
-  />
+  <StyledSVG path={path} width={width} height={height} fill={fill} svgClassName={className} />
 );
 
 SVGIcon.propTypes = {
