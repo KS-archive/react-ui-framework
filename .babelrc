@@ -5,7 +5,6 @@
     "@babel/preset-stage-0"
   ],
   "plugins": [
-    ["ramda",{ "useES": true }],
     "@babel/plugin-syntax-dynamic-import",
     "babel-plugin-styled-components",
     "@babel/plugin-transform-react-inline-elements",
