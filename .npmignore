@@ -1,5 +1,10 @@
-.babelrc
 src
-.DS_Store
-node_modules
-*.log
+docs
+demo
+.babelrc
+.editorconfig
+.eslintrc.json
+.package-lock.json
+yarn.lock
+gulpfile.json
+.stylelintrc

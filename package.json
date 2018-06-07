@@ -2,12 +2,11 @@
   "name": "react-ui-framework",
   "version": "0.1.2",
   "description": "React implementation of design system created inside KNWD.",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "style": "style.css",
   "repository": "",
   "scripts": {
-    "build": "babel lib -d build",
-    "build:watch": "babel lib -w -d build"
+    "start": "gulp"
   },
   "author": "Konrad Szwarc",
   "license": "MIT",
