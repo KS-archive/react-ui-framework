@@ -11,7 +11,9 @@ const babelConfig = {
   presets: [
     '@babel/preset-react',
     '@babel/preset-env',
-    '@babel/preset-stage-0',
+    ['@babel/preset-stage-0', {
+      decoratorsLegacy: true,
+    }],
   ],
   plugins: [
     'transform-class-properties',
