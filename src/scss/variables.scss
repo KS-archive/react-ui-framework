@@ -13,31 +13,31 @@
   /* CONTAINER AND GRID */
 
   --container-width: 1504px;
-  --grid-gap: 32px;
+  --grid-gap: var(--space-xl);
 
   @media (max-width: 1599px) {
     --container-width: 1120px;
-    --grid-gap: 32px;
+    --grid-gap: var(--space-xl);
   }
 
   @media (max-width: 1199px) {
     --container-width: 936px;
-    --grid-gap: 24px;
+    --grid-gap: var(--space-lg);
   }
 
   @media (max-width: 959px) {
     --container-width: 744px;
-    --grid-gap: 24px;
+    --grid-gap: var(--space-lg);
   }
 
   @media (max-width: 767px) {
     --container-width: 464px;
-    --grid-gap: 16px;
+    --grid-gap: var(--space-md);
   }
 
   @media (max-width: 479px) {
     --container-width: calc(100% - 32px);
-    --grid-gap: 16px;
+    --grid-gap: var(--space-md);
   }
 
   /* COLORS */
@@ -85,8 +85,11 @@
   --info-active: hsl(180, 82%, 38%);
 
   --background: hsl(240, 100%, 99%);
-  --overlay: hsla(0, 0%, 16%, 24%);
-  --shadow1: 0 2px 4px rgba(41, 41, 41, 0.2), 0 3px 6px rgba(41, 41, 41, 0.3);
+  --overlay: hsla(0, 0%, 16%, 65%);
+
+  --shadow1: 0 4px 6px hsl(0, 0%, 16%, 0.2);
+  --shadow2: 0 2px 6px hsl(0, 0%, 16%, 0.2);
+  --shadow3: 0 1px 2px hsl(0, 0%, 16%, 0.12);
 
   /* TYPOGRAPHY */
   --text1: var(--grey1);
@@ -95,6 +98,7 @@
 
   --mainFont: 'Raleway', 'Arial', sans-serif;
   --headerFont: 'Montserrat', 'Arial', sans-serif;
+
   --regular: 400;
   --medium: 500;
   --bold: 700;
@@ -103,21 +107,21 @@
   --font-xxl-lh: 40px;
 
   --font-xl: 24px;
-  --font-xl-lh: 1.25;
+  --font-xl-lh: 30px;
 
   --font-lg: 18px;
-  --font-lg-lh: 1.14;
+  --font-lg-lh: 20px;
 
   --font-md: 16px;
-  --font-md-lh: 1.25;
+  --font-md-lh: 20px;
 
   --font-sm: 14px;
-  --font-sm-lh: 1.3;
+  --font-sm-lh: 16px;
 
   --font-xs: 12px;
-  --font-xs-lh: 16px;
+  --font-xs-lh: 14px;
 
   /* TRANSITIONS */
-  --ease-in-out: cubic-bezier(.62, .28, .23, .99);
+  --ease-in-out: cubic-bezier(0.62, 0.28, 0.23, 0.99);
   --ease-out: cubic-bezier(0.075, 0.82, 0.165, 1);
 }

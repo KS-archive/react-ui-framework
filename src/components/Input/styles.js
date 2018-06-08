@@ -32,12 +32,11 @@ export default styled.div`
     box-shadow: inset 0 0 0 1px var(--grey3);
     border-radius: 4px;
 
-    &::before,
-    &::after {
+    &::before {
       content: '';
       position: absolute;
       background-color: ${props => getColor(props)};
-      width: ${props => props.focused || props.error ? '60%' : 0};;
+      width: ${props => props.focused || props.error ? '100%' : 0};;
       height: ${props => props.focused || props.error ? '100%' : 0};;
       transition: all 0.3s var(--ease-in-out);
       border-radius: 4px;
@@ -46,11 +45,6 @@ export default styled.div`
     &::before {
       top: 0;
       left: 0;
-    }
-
-    &::after {
-      right: 0;
-      bottom: 0;
     }
 
     > div:first-child {
