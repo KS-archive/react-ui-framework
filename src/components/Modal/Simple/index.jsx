@@ -11,7 +11,18 @@ const sizeMeHOC = sizeMe({
 });
 
 const SimpleDialog = ({
-  animationName, animationType, buttons, children, color, duration, icon, onClose, showCloseButton, size, title, width
+  animationName,
+  animationType,
+  buttons,
+  children,
+  color,
+  duration,
+  icon,
+  onClose,
+  showCloseButton,
+  size,
+  title,
+  width,
 }) => (
   <StyledDialog
     width={width}
@@ -19,7 +30,7 @@ const SimpleDialog = ({
     animationName={animationName}
     animationType={animationType}
     color={color}
-    overSize={window.innerHeight < (size.height + 80)}
+    overSize={window.innerHeight < size.height + 80}
   >
     {showCloseButton && <CloseButton className="fa fa-times" onClick={onClose} />}
     <Header>
@@ -27,11 +38,9 @@ const SimpleDialog = ({
       <Title>{title}</Title>
     </Header>
     <Content>{children}</Content>
-    {buttons.length > 0 &&
-      <Footer>
-        {buttons.map(button => <Button key={button.label} size="sm" {...button} />)}
-      </Footer>
-    }
+    {buttons.length > 0 && (
+      <Footer>{buttons.map(button => <Button key={button.label} size="sm" {...button} />)}</Footer>
+    )}
   </StyledDialog>
 );
 

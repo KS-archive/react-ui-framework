@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   cursor: pointer;
   user-select: none;
-  display: block;
+  display: inline-block;
   position: relative;
   margin: 2px;
   padding-left: 28px;
@@ -15,9 +15,9 @@ export const Container = styled.div`
 
   .error {
     position: absolute;
-    visibility: ${({ error }) => error && typeof error === 'string' ? 'visible' : 'hidden'};
-    top: ${({ error }) => error && typeof error === 'string' ? '20px' : 0};
-    opacity: ${({ error }) => error && typeof error === 'string' ? 1 : 0};
+    visibility: ${({ error }) => (error && typeof error === 'string' ? 'visible' : 'hidden')};
+    top: ${({ error }) => (error && typeof error === 'string' ? '20px' : 0)};
+    opacity: ${({ error }) => (error && typeof error === 'string' ? 1 : 0)};
     left: 0;
     padding-top: 2px;
     font-size: var(--font-xs);
@@ -26,7 +26,9 @@ export const Container = styled.div`
     transition: all 0.3s var(--ease-in-out);
   }
 
-  ${props => props.error && `
+  ${props =>
+    props.error &&
+    `
     span {
       border: 1px solid var(--error) !important;
 
@@ -34,7 +36,7 @@ export const Container = styled.div`
         color: var(--error);
       }
     }
-  `}
+  `};
 `;
 
 export const Label = styled.label`
@@ -43,6 +45,7 @@ export const Label = styled.label`
   top: 1px;
   font-family: var(--mainFont);
   font-size: var(--font-md);
+  line-height: var(--font-md-lh);
   font-weight: var(--regular);
   color: var(--text2);
 `;
@@ -67,12 +70,12 @@ export const Checkmark = styled.span`
   height: 20px;
   width: 20px;
   background-color: #fff;
-  border: 1px solid var(--grey2);
+  border: 1px solid var(--grey3);
   border-radius: 4px;
   transition: all 0.3s var(--ease-in-out);
 
   &::after {
-    content: "\f00d";
+    content: '\f00d';
     position: absolute;
     opacity: 0;
     display: flex;
@@ -88,4 +91,3 @@ export const Checkmark = styled.span`
     transition: all 0.3s var(--ease-in-out);
   }
 `;
-

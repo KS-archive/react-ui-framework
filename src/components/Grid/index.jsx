@@ -5,10 +5,11 @@ import GridContainer from './styles';
 
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
-const initializeStartColumns = s => s.reduce((a, c) => {
-  a[c] = 1;
-  return a;
-}, {});
+const initializeStartColumns = s =>
+  s.reduce((a, c) => {
+    a[c] = 1;
+    return a;
+  }, {});
 
 const isGridItem = ({ type }) => {
   try {
@@ -59,26 +60,29 @@ class Grid extends Component {
   initializeGrid = (props) => {
     this.startColumns = initializeStartColumns(sizes);
     props.children.map(child => isGridItem(child) && this.modifyProps(child));
-  }
+  };
 
   modifyProps = (child) => {
     let lastSize = 1;
     let lastOffset = 0;
     sizes.map((size) => {
       const childSize = child.props[size];
-      const columns = String(childSize).includes('/') ? getSizeFromColumns(childSize) : validateSize(childSize);
+      const columns = String(childSize).includes('/')
+        ? getSizeFromColumns(childSize)
+        : validateSize(childSize);
       lastSize = columns || lastSize;
       lastOffset = child.props[`${size}-offset`] || lastOffset;
 
       const sum = this.startColumns[size] + lastOffset + lastSize;
-      const [start, end] = (sum > 13)
-        ? [1 + lastOffset, 1 + lastSize + lastOffset]
-        : [this.startColumns[size] + lastOffset, sum];
+      const [start, end] =
+        sum > 13
+          ? [1 + lastOffset, 1 + lastSize + lastOffset]
+          : [this.startColumns[size] + lastOffset, sum];
 
       child.props[size] = `${start}/${end}`;
       this.startColumns[size] = end;
     });
-  }
+  };
 
   render() {
     const {
@@ -92,11 +96,7 @@ class Grid extends Component {
     }
 
     return (
-      <GridContainer
-        className={className}
-        fluid={fluid}
-        style={style}
-      >
+      <GridContainer className={className} fluid={fluid} style={style}>
         {children}
       </GridContainer>
     );

@@ -6,15 +6,15 @@ export default class ModalDocs extends PureComponent {
   state = {
     simple: false,
     second: false,
-  }
+  };
 
   show = (name) => {
     this.setState({ ...this.state, [name]: true });
-  }
+  };
 
   hide = (name) => {
     this.setState({ ...this.state, [name]: false });
-  }
+  };
 
   render() {
     return (
@@ -40,8 +40,30 @@ export default class ModalDocs extends PureComponent {
                 },
               ]}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem.
+              Duis fringilla luctus augue, et laoreet nisi sagittis sit amet. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus
+              augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet
+              nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis
+              sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis
+              placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis
+              fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Maecenas quis placerat lorem. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus
+              augue, et laoreet nisi sagittis sit amet. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet
+              nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis
+              sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis
+              placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis
+              fringilla luctus augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus
+              augue, et laoreet nisi sagittis sit amet.Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas quis placerat lorem.
             </Modal>
             <Modal
               visible={this.state.second}
@@ -60,7 +82,8 @@ export default class ModalDocs extends PureComponent {
                 },
               ]}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem. Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lorem.
+              Duis fringilla luctus augue, et laoreet nisi sagittis sit amet.
             </Modal>
           </Flexbox>
         </Section>

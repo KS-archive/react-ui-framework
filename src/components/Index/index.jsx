@@ -16,10 +16,7 @@ let isFontAwesomeLoaded = false;
 
 const config = {
   google: {
-    families: [
-      'Montserrat:400,500,700:latin,latin-ext',
-      'Raleway:400,500,700:latin,latin-ext',
-    ],
+    families: ['Montserrat:400,500,700:latin,latin-ext', 'Raleway:400,500,700:latin,latin-ext'],
   },
 };
 
@@ -33,9 +30,7 @@ const Index = ({ after, before, bodyClassName, children, className, fa, notifica
       <Container className={className}>
         {before}
         <Body className={bodyClassName}>
-          <Scrollbars>
-            {children}
-          </Scrollbars>
+          <Scrollbars>{children}</Scrollbars>
         </Body>
         {after}
         {notifications && <NotificationsSystem theme={theme} />}
@@ -61,6 +56,6 @@ Index.defaultProps = {
   className: '',
   fa: 'free',
   notifications: false,
-}
+};
 
 export default Index;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.li`
   cursor: pointer;
   display: flex;
-  color: var(--grey2);
+  align-items: center;
 
   &:hover {
     > div::before {
@@ -28,14 +28,17 @@ export const Input = styled.input`
 export const Label = styled.label`
   top: 1px;
   margin-left: var(--space-sm);
+  font-family: var(--mainFont);
   font-weight: var(--regular);
   font-size: var(--font-md);
+  line-height: var(--font-md-lh);
+  color: var(--text2);
   transition: all 0.3s linear;
 `;
 
 export const Check = styled.div`
   position: relative;
-  border: ${({ error }) => error && typeof error === 'string' ? '1px solid var(--error)' : '1px solid var(--grey2)'};
+  border: ${({ error }) => (error ? '1px solid var(--error)' : '1px solid var(--grey3)')};
   background-color: #fff;
   border-radius: 100%;
   height: 20px;
@@ -47,7 +50,7 @@ export const Check = styled.div`
     display: block;
     position: absolute;
     opacity: 0;
-    background-color: ${({ error }) => error && typeof error === 'string' ? 'var(--error)' : 'var(--primary2)'};
+    background-color: ${({ error }) => (error ? 'var(--error)' : 'var(--primary2)')};
     border-radius: 100%;
     height: 12px;
     width: 12px;
@@ -56,4 +59,3 @@ export const Check = styled.div`
     transition: all 0.3s linear;
   }
 `;
-

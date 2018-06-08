@@ -8,15 +8,15 @@ import { Container } from '../../../helpers/styles';
 const items = [
   {
     title: 'Change tags',
-    icon: 'icons/bookmark.svg'
+    icon: 'icons/bookmark.svg',
   },
   {
     title: 'Change font',
-    icon: 'icons/font.svg'
+    icon: 'icons/font.svg',
   },
   {
     title: 'Change colors',
-    icon: 'icons/paint-brush.svg'
+    icon: 'icons/paint-brush.svg',
   },
 ];
 /* eslint-enable */

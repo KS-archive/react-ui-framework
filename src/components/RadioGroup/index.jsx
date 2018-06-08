@@ -13,7 +13,7 @@ class RadioGroup extends PureComponent {
       this.setState({ value: name });
       this.props.onChange(name);
     }
-  }
+  };
 
   render() {
     const {
@@ -55,7 +55,7 @@ RadioGroup.defaultProps = {
   className: '',
   error: '',
   label: '',
-  onChange: () => { },
+  onChange: () => {},
   style: {},
   value: '',
 };

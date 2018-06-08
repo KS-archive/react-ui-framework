@@ -11,7 +11,7 @@ const sizes = {
 class Tooltip extends Component {
   state = {
     updated: false,
-  }
+  };
 
   componentWillReceiveProps(np) {
     if (np !== this.props) {
@@ -26,39 +26,39 @@ class Tooltip extends Component {
   render() {
     return (
       <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-        {!this.state.updated
-          ? (
-            <TippyTooltip
-              animation={this.props.animation}
-              arrow={this.props.arrow}
-              arrowSize={sizes[this.props.arrowSize]}
-              className={this.props.className}
-              delay={this.props.delay}
-              disabled={this.props.disabled}
-              distance={this.props.distance}
-              duration={this.props.duration}
-              hideDelay={this.props.hideDelay}
-              hideOnClick={this.props.hideOnClick}
-              html={this.props.html}
-              interactive={this.props.interactive}
-              offset={this.props.offset}
-              open={this.props.open}
-              position={this.props.position}
-              size={sizes[this.props.size]}
-              style={this.props.style}
-              theme={this.props.theme}
-              title={this.props.title}
-              touchHold={this.props.touchHold}
-              trigger={this.props.trigger}
-            >
-              {this.props.children}
-            </TippyTooltip>
-          ) : this.props.children
-        }
+        {!this.state.updated ? (
+          <TippyTooltip
+            animation={this.props.animation}
+            arrow={this.props.arrow}
+            arrowSize={sizes[this.props.arrowSize]}
+            className={this.props.className}
+            delay={this.props.delay}
+            disabled={this.props.disabled}
+            distance={this.props.distance}
+            duration={this.props.duration}
+            hideDelay={this.props.hideDelay}
+            hideOnClick={this.props.hideOnClick}
+            html={this.props.html}
+            interactive={this.props.interactive}
+            offset={this.props.offset}
+            open={this.props.open}
+            position={this.props.position}
+            size={sizes[this.props.size]}
+            style={this.props.style}
+            theme={this.props.theme}
+            title={this.props.title}
+            touchHold={this.props.touchHold}
+            trigger={this.props.trigger}
+          >
+            {this.props.children}
+          </TippyTooltip>
+        ) : (
+          this.props.children
+        )}
       </span>
     );
   }
-};
+}
 
 Tooltip.propTypes = {
   animation: PropTypes.oneOf(['shift', 'perspective', 'fade', 'scale', 'none']),

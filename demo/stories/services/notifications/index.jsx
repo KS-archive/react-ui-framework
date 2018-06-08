@@ -11,7 +11,7 @@ export default class Notifications extends PureComponent {
       status: 'info',
       dismissAfter: 0,
     });
-  }
+  };
 
   notifySuccess = () => {
     this.props.notify({
@@ -20,7 +20,7 @@ export default class Notifications extends PureComponent {
       status: 'success',
       dismissAfter: 0,
     });
-  }
+  };
 
   notifyWarning = () => {
     this.props.notify({
@@ -29,7 +29,7 @@ export default class Notifications extends PureComponent {
       status: 'warning',
       dismissAfter: 0,
     });
-  }
+  };
 
   notifyError = () => {
     this.props.notify({
@@ -38,7 +38,7 @@ export default class Notifications extends PureComponent {
       status: 'error',
       dismissAfter: 0,
     });
-  }
+  };
 
   notifyLoading = () => {
     this.props.notify({
@@ -47,7 +47,7 @@ export default class Notifications extends PureComponent {
       status: 'loading',
       dismissAfter: 0,
     });
-  }
+  };
 
   notifyOneButton = () => {
     this.props.notify({
@@ -55,11 +55,13 @@ export default class Notifications extends PureComponent {
       message: 'This is an notification with one button.',
       status: 'info',
       dismissAfter: 0,
-      buttons: [{
-        name: 'Close',
-      }],
+      buttons: [
+        {
+          name: 'Close',
+        },
+      ],
     });
-  }
+  };
 
   notifyTwoButtons = () => {
     this.props.notify({
@@ -67,13 +69,16 @@ export default class Notifications extends PureComponent {
       message: 'This is an notification with two buttons',
       status: 'info',
       dismissAfter: 0,
-      buttons: [{
-        name: 'Confirm',
-      }, {
-        name: 'Cancel',
-      }],
+      buttons: [
+        {
+          name: 'Confirm',
+        },
+        {
+          name: 'Cancel',
+        },
+      ],
     });
-  }
+  };
 
   notifyTwoButtonsWithPrimary = () => {
     this.props.notify({
@@ -81,14 +86,17 @@ export default class Notifications extends PureComponent {
       message: 'This notification has one primary button.',
       status: 'info',
       dismissAfter: 0,
-      buttons: [{
-        name: 'Confirm',
-        primary: true,
-      }, {
-        name: 'Cancel',
-      }],
+      buttons: [
+        {
+          name: 'Confirm',
+          primary: true,
+        },
+        {
+          name: 'Cancel',
+        },
+      ],
     });
-  }
+  };
 
   notifyWithImage = () => {
     this.props.notify({
@@ -98,7 +106,7 @@ export default class Notifications extends PureComponent {
       dismissAfter: 0,
       image: 'img/squirrel.jpg',
     });
-  }
+  };
 
   notifyWithClosingButton = () => {
     this.props.notify({
@@ -108,7 +116,7 @@ export default class Notifications extends PureComponent {
       dismissAfter: 0,
       closeButton: true,
     });
-  }
+  };
 
   render() {
     return (
@@ -128,7 +136,9 @@ export default class Notifications extends PureComponent {
           <Flexbox>
             <StyledButton onClick={this.notifyOneButton}>One button</StyledButton>
             <StyledButton onClick={this.notifyTwoButtons}>Two buttons</StyledButton>
-            <StyledButton onClick={this.notifyTwoButtonsWithPrimary}>Two buttons (first as primary)</StyledButton>
+            <StyledButton onClick={this.notifyTwoButtonsWithPrimary}>
+              Two buttons (first as primary)
+            </StyledButton>
           </Flexbox>
         </Section>
         <Section>

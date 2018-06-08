@@ -28,14 +28,18 @@ class Modal extends PureComponent {
     }
   }
 
-  onKeyUp = ({ keyCode }) => (keyCode === 27) && this.props.onClose();
+  onKeyUp = ({ keyCode }) => keyCode === 27 && this.props.onClose();
 
   enter = () => this.setState({ isShow: true, animationType: 'enter' });
 
   leave = () => this.setState({ animationType: 'leave' });
 
   animationEnd = ({ target }) => {
-    const { state: { animationType }, props: { onAnimationEnd }, container } = this;
+    const {
+      state: { animationType },
+      props: { onAnimationEnd },
+      container,
+    } = this;
 
     if (animationType === 'leave') {
       this.setState({ isShow: false });
@@ -46,14 +50,28 @@ class Modal extends PureComponent {
     if (target === container && onAnimationEnd) {
       onAnimationEnd();
     }
-  }
+  };
 
   render() {
     const {
-      props: { animation, buttons, children, color, duration, enterAnimation, icon, leaveAnimation, onClose, showCloseButton, title, width },
+      props: {
+        animation,
+        buttons,
+        children,
+        color,
+        duration,
+        enterAnimation,
+        icon,
+        leaveAnimation,
+        onClose,
+        showCloseButton,
+        title,
+        width,
+      },
       state: { animationType, isShow },
     } = this;
-    const animationName = (animationType === 'enter' ? enterAnimation : leaveAnimation) || animation;
+    const animationName =
+      (animationType === 'enter' ? enterAnimation : leaveAnimation) || animation;
 
     return (
       <Container
@@ -62,11 +80,18 @@ class Modal extends PureComponent {
         animationType={animationType}
         onAnimationEnd={this.animationEnd}
         tabIndex="-1"
-        innerRef={(container) => { this.container = container; }}
+        innerRef={(container) => {
+          this.container = container;
+        }}
         onKeyUp={this.onKeyUp}
       >
         <Mask key="mask" onClick={onClose} />
-        <Scrollbars key="scrollbars" ref={(scrollbars) => { this.scrollbars = scrollbars; }}>
+        <Scrollbars
+          key="scrollbars"
+          ref={(scrollbars) => {
+            this.scrollbars = scrollbars;
+          }}
+        >
           <SimpleDialog
             width={width}
             duration={duration}

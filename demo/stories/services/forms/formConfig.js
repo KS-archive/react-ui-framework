@@ -14,9 +14,6 @@ export default {
     type: 'Checkbox',
     extend: {
       label: 'I agrre with the terms of service.',
-      style: {
-        marginTop: 16,
-      },
     },
     validation: {
       required: {
@@ -74,7 +71,7 @@ export default {
       },
       items: [
         { label: 'Male', name: 'male' },
-        { label: 'Female', name: 'female' },
+        { label: 'Female', name: 'female', style: { marginTop: 8 } },
       ],
     },
     validation: {

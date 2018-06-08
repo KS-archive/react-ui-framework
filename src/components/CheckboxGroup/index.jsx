@@ -5,15 +5,18 @@ import { Container, Label, Items, Error } from './styles';
 
 class ChceckboxGroup extends PureComponent {
   static getDerivedStateFromProps(props, state) {
-    return (props.value !== state.value) ? { value: { ...state.value, ...props.value } } : null;
+    return props.value !== state.value ? { value: { ...state.value, ...props.value } } : null;
   }
 
   constructor(props) {
     super(props);
-    const value = props.items.reduce((acc, item) => {
-      acc[item.name] = acc[item.name] || false;
-      return acc;
-    }, { ...props.value });
+    const value = props.items.reduce(
+      (acc, item) => {
+        acc[item.name] = acc[item.name] || false;
+        return acc;
+      },
+      { ...props.value },
+    );
     this.state = { value };
   }
 
@@ -21,7 +24,7 @@ class ChceckboxGroup extends PureComponent {
     const newValue = { ...this.state.value, [name]: value };
     this.setState({ value: newValue });
     this.props.onChange(newValue);
-  }
+  };
 
   renderCheckbox = item => (
     <Checkbox
@@ -39,9 +42,7 @@ class ChceckboxGroup extends PureComponent {
     return (
       <Container style={style} className={className}>
         {label && <Label>{label}</Label>}
-        <Items>
-          {items.map(this.renderCheckbox)}
-        </Items>
+        <Items>{items.map(this.renderCheckbox)}</Items>
         <Error error={error}>{error}</Error>
       </Container>
     );

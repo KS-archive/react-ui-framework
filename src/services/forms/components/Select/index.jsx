@@ -6,7 +6,12 @@ export default class Select extends PureComponent {
 
   render() {
     const {
-      input, label, meta: { touched, error }, className, style, items,
+      input,
+      label,
+      meta: { touched, error },
+      className,
+      style,
+      items,
     } = this.props;
 
     return (

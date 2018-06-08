@@ -3,22 +3,26 @@ import PropTypes from 'prop-types';
 import { Container, Label, Input, Checkmark } from './styles';
 
 class Checkbox extends PureComponent {
-  static getDerivedStateFromProps(props, state) {
-    return (props.checked !== state.checked) ? { checked: props.checked } : null;
-  }
-
   state = {
     checked: this.props.checked,
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    return props.checked !== state.checked ? { checked: props.checked } : null;
   }
 
   onChange = () => {
     const checked = !this.state.checked;
     this.setState({ checked });
     this.props.onChange(checked);
-  }
+  };
 
   render() {
-    const { onChange, state: { checked }, props: { className, error, label, name, style } } = this;
+    const {
+      onChange,
+      state: { checked },
+      props: { className, error, label, name, style },
+    } = this;
 
     return (
       <Container className={className} error={error} onClick={onChange} style={style}>

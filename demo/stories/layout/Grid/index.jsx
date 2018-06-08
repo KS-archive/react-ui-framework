@@ -10,7 +10,7 @@ const style = {
   color: '#fff',
   fontSize: 24,
   height: 48,
-  backgroundColor: 'var(--primary2)'
+  backgroundColor: 'var(--primary2)',
 };
 
 const columns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

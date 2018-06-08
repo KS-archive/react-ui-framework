@@ -463,7 +463,8 @@
 :local .notification-icon {
   box-sizing: border-box;
   margin: var(--space-md) 0 0 var(--space-md);
-  font-size: var(--font-lg) !important;
+  font-size: var(--font-xl) !important;
+  font-size: var(--font-xl) !important;
   align-self: flex-start;
 }
 :local .notification-icon::before {
@@ -532,22 +533,13 @@
   background-color: rgba(0, 0, 0, 0.02);
 }
 :local .notification-title {
-  position: relative;
-  top: -4px;
-  margin: 0;
-  font-size: var(--font-md);
-  font-weight: var(--bold);
-  line-height: var(--font-md-lh);
-  color: var(--grey1);
   padding: var(--space-md) var(--space-md) 0;
 }
 :local .notification-message {
-  margin: 0;
   font-size: var(--font-sm);
-  font-weight: var(--regular);
   line-height: var(--font-sm-lh);
   color: var(--grey2);
-  padding: 0 var(--space-md) var(--space-md);
+  padding: var(--space-xs) var(--space-md) var(--space-md);
 }
 :local .notification--dismissible {
   cursor: pointer;

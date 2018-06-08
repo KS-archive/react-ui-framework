@@ -6,9 +6,12 @@ export default class Checkbox extends PureComponent {
 
   render() {
     const {
-      input, label, meta: { touched, error }, className, style,
+      input,
+      label,
+      meta: { touched, error },
+      className,
+      style,
     } = this.props;
-    console.log(this.props);
 
     return (
       <CheckboxBase

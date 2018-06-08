@@ -31,7 +31,7 @@ export const Mask = styled.div`
 
 export const StyledDialog = styled.div`
   position: relative;
-  width: ${({ width }) => typeof width === 'string' ? width : `${width}px`};
+  width: ${({ width }) => (typeof width === 'string' ? width : `${width}px`)};
   max-width: calc(100vw - var(--space-xl));
   margin: var(--space-xl) 0;
   z-index: 101;
@@ -40,10 +40,9 @@ export const StyledDialog = styled.div`
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  animation: ${props => `modal-${props.animationName}-${props.animationType} ${props.duration}ms`} both cubic-bezier(0.4, 0, 0, 1.5);
-  ${props => props.overSize && 'align-self: flex-start;'}
-
-  &:focus {
+  animation: ${props => `modal-${props.animationName}-${props.animationType} ${props.duration}ms`}
+    both cubic-bezier(0.4, 0, 0, 1.5);
+  ${props => props.overSize && 'align-self: flex-start;'} &:focus {
     outline: none;
   }
 `;
@@ -93,4 +92,3 @@ export const Footer = styled.div`
     margin-left: var(--space-md);
   }
 `;
-

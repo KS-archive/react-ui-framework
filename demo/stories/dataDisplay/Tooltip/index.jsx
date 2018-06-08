@@ -43,7 +43,7 @@ export default () => (
   <WithFigma url="https://www.figma.com/file/UiPAHOSZM4nMLzzICmhlUHle/Data-display?node-id=1%3A19">
     <Container>
       <Tooltip
-        title={text('title', 'I\'m the default tooltip')}
+        title={text('title', "I'm the default tooltip")}
         animation={select('animation', animations, 'shift')}
         arrow={boolean('arrow', false)}
         arrowSize={select('arrowSize', sizes, 'md')}

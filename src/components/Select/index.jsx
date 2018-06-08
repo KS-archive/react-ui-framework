@@ -19,24 +19,37 @@ class Select extends PureComponent {
   handleFocus = () => {
     this.setState({ focused: true });
     this.props.onFocus();
-  }
+  };
 
   handleBlur = () => {
     this.setState({ focused: false, pristine: false });
     this.props.onBlur();
-  }
+  };
 
   handleChange = (option) => {
     const value = option ? option.value : null;
     this.setState({ value, filled: value && value.length > 0 });
     this.props.onChange(value);
-  }
+  };
 
   render() {
     const {
-      handleBlur, handleChange, handleFocus,
+      handleBlur,
+      handleChange,
+      handleFocus,
       state: { filled, focused, pristine, value },
-      props: { autoBlur, autoFocus, className, clearable, error, label, name, items, searchable, style },
+      props: {
+        autoBlur,
+        autoFocus,
+        className,
+        clearable,
+        error,
+        label,
+        name,
+        items,
+        searchable,
+        style,
+      },
     } = this;
 
     return (

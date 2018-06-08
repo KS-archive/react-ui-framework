@@ -1,6 +1,6 @@
 {
   "name": "react-ui-framework",
-  "version": "0.1.4",
+  "version": "0.0.1",
   "description": "React implementation of design system created inside KNWD.",
   "main": "lib/index.js",
   "style": "style.css",

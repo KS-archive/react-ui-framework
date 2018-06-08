@@ -17,7 +17,9 @@ export const Label = styled.label`
 `;
 
 export const Items = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 2px;
   border-radius: 4px;
   transition: all 0.3s var(--ease-in-out);
@@ -29,8 +31,8 @@ export const Items = styled.div`
 
 export const Error = styled.div`
   padding-top: 2px;
-  transform: translateY(${({ error }) => error ? 0 : 'var(--space-md)'});
-  opacity: ${({ error }) => error ? 1 : 0};
+  transform: translateY(${({ error }) => (error ? 0 : 'var(--space-md)')});
+  opacity: ${({ error }) => (error ? 1 : 0)};
   font-size: var(--font-xs);
   color: var(--error);
   transition: all 0.3s var(--ease-in-out);

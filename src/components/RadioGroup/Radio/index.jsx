@@ -13,7 +13,9 @@ class Radio extends PureComponent {
       <Container className={className} onClick={onClick} style={style}>
         <Input type="radio" checked={checked} name={name} id={this.id} />
         <Check error={error} />
-        <Label for={this.id} onClick={onClick}>{label}</Label>
+        <Label for={this.id} onClick={onClick}>
+          {label}
+        </Label>
       </Container>
     );
   }

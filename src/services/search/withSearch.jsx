@@ -6,9 +6,11 @@ import { omit } from 'ramda';
 import { setSearch } from './actions';
 
 export default (WrappedComponent) => {
-
   @withRouter
-  @connect(({ search }) => ({ search }), { setSearch })
+  @connect(
+    ({ search }) => ({ search }),
+    { setSearch },
+  )
   class WithSearch extends PureComponent {
     componentWillMount() {
       if (this.props.location.search) {
@@ -31,12 +33,10 @@ export default (WrappedComponent) => {
 
     setSearch = (queryObj) => {
       this.props.setSearch(queryObj, this.props.history);
-    }
+    };
 
     render() {
-      return (
-        <WrappedComponent {...this.props} setSearch={this.setSearch} />
-      );
+      return <WrappedComponent {...this.props} setSearch={this.setSearch} />;
     }
   }
 

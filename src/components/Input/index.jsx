@@ -13,15 +13,16 @@ class Input extends PureComponent {
       focused: false,
       filled: value && value.length > 0,
       pristine,
+      snapshot: value,
     };
   }
 
-  static getDerivedStateFromProps(np, ps) {
-    return ps.value !== np.value ? { value: np.value } : null;
+  static getDerivedStateFromProps({ value }, ps) {
+    return ps.value !== value && ps.snapshot !== value ? { value } : null;
   }
 
   handleChange = ({ target: { value } }) => {
-    this.setState({ value, filled: value.length > 0 });
+    this.setState({ snapshot: this.props.value, value, filled: value.length > 0 });
     this.props.onChange(value);
   };
 
@@ -45,15 +46,20 @@ class Input extends PureComponent {
     } = this;
 
     return (
-      <InputWrapper error={error} filled={filled} focused={focused} pristine={pristine}>
+      <InputWrapper
+        className={className}
+        error={error}
+        filled={filled}
+        focused={focused}
+        pristine={pristine}
+        style={style}
+      >
         <div className="border">
           <div />
         </div>
         <label htmlFor={label}>{label}</label>
         <input
           name={name}
-          className={className}
-          style={style}
           type={type}
           value={value}
           onChange={handleChange}

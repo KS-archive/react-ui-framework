@@ -8,7 +8,8 @@ const getColor = kind => do {
   else kind;
 };
 
-const getSizeData = size => (size === 'md') ? ['font-md', '40px'] : (size === 'lg') ? ['font-md', '48px'] : ['font-sm', '32px'];
+const getSizeData = size =>
+  size === 'md' ? ['font-md', '40px'] : size === 'lg' ? ['font-md', '48px'] : ['font-sm', '32px'];
 
 const ButtonBase = styled.button`
   user-select: none;
@@ -33,9 +34,7 @@ const ButtonBase = styled.button`
       font-size: var(--${sizeArray[0]});
       height: ${sizeArray[1]};
     `;
-  }}
-
-  &:hover {
+  }} &:hover {
     transition: all 0.3s var(--ease-in-out);
   }
 
@@ -63,11 +62,11 @@ export const Ghost = ButtonBase.extend`
         border: 1px solid var(--${colorBase}-active);
         background-color: rgba(0, 0, 0, 0.04);
       }`;
-  }}
+  }};
 `;
 
 export const Filled = ButtonBase.extend`
-  color: ${props => props.kind === 'white' ? 'var(--grey2)' : '#fff'};
+  color: ${props => (props.kind === 'white' ? 'var(--grey2)' : '#fff')};
   ${(props) => {
     const colorBase = getColor(props.kind);
     return `
@@ -83,5 +82,5 @@ export const Filled = ButtonBase.extend`
         background-color: var(--${colorBase}-active);
         border: 1px solid var(--${colorBase}-active);
       }`;
-  }}
+  }};
 `;

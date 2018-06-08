@@ -11,15 +11,15 @@ const StyledFlexbox = Flexbox.extend`
 export default class Notifications extends PureComponent {
   state = {
     query: this.props.query,
-  }
+  };
 
   onChange = (value) => {
     this.setState({ query: value });
-  }
+  };
 
   search = () => {
     this.props.setSearch({ query: this.state.query });
-  }
+  };
 
   render() {
     return (
@@ -27,7 +27,7 @@ export default class Notifications extends PureComponent {
         <Section>
           <Header>Basic search</Header>
           <StyledFlexbox>
-            <Input value={this.state.query} onChange={this.onChange} />
+            <Input value={this.state.query} onChange={this.onChange} style={{ margin: 0 }} />
             <Button onClick={this.search}>Search</Button>
           </StyledFlexbox>
         </Section>

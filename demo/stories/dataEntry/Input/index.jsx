@@ -1,6 +1,6 @@
 import React from 'react';
 import { WithFigma } from 'storybook-addon-figma';
-import { text, object, select, boolean } from '@storybook/addon-knobs';
+import { text, object, select } from '@storybook/addon-knobs';
 import { Input } from 'react-ui-framework';
 import { Container, Section, Flexbox, Header } from '../../../helpers/styles';
 

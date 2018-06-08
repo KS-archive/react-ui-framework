@@ -10,10 +10,7 @@ export default () => (
         <Select
           label="E-mail"
           name="email"
-          items={[
-            { value: 'one', label: 'One' },
-            { value: 'two', label: 'Two' },
-          ]}
+          items={[{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }]}
         />
       </Flexbox>
     </Section>

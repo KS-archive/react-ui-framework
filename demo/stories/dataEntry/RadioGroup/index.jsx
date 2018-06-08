@@ -8,7 +8,7 @@ const items = [
   { label: 'One', name: 'one', style: { marginBottom: 16 } },
   { label: 'Two', name: 'two', style: { marginBottom: 16 } },
   { label: 'Three', name: 'three', style: { marginBottom: 16 } },
-  { label: 'Four', name: 'four' }
+  { label: 'Four', name: 'four' },
 ];
 
 export default () => (

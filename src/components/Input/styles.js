@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
-const getColor = ({ focused, error }) => (error && !focused)
-  ? 'var(--error)'
-  : (focused)
-    ? 'var(--primary2)'
-    : 'var(--grey3)';
+const getColor = ({ focused, error }) =>
+  error && !focused ? 'var(--error)' : focused ? 'var(--primary2)' : 'var(--grey3)';
 
 export default styled.div`
   z-index: 0;
@@ -36,8 +33,8 @@ export default styled.div`
       content: '';
       position: absolute;
       background-color: ${props => getColor(props)};
-      width: ${props => props.focused || props.error ? '100%' : 0};;
-      height: ${props => props.focused || props.error ? '100%' : 0};;
+      width: ${props => (props.focused || props.error ? '100%' : 0)};
+      height: ${props => (props.focused || props.error ? '100%' : 0)};
       transition: all 0.3s var(--ease-in-out);
       border-radius: 4px;
     }
@@ -61,12 +58,12 @@ export default styled.div`
   label {
     z-index: 2;
     position: absolute;
-    top: ${props => (props.focused || props.filled) ? '-7px' : 'calc(50% - 7px)'};
+    top: ${props => (props.focused || props.filled ? '-7px' : 'calc(50% - 7px)')};
     left: var(--space-md);
-    cursor: ${props => (props.focused || props.filled) ? 'default' : 'text'};
-    font-size: ${props => (props.focused || props.filled) ? 'var(--font-xs)' : 'var(--font-md)'};
+    cursor: ${props => (props.focused || props.filled ? 'default' : 'text')};
+    font-size: ${props => (props.focused || props.filled ? 'var(--font-xs)' : 'var(--font-md)')};
     color: ${props => getColor(props)};
-    font-weight: ${props => (props.focused || props.filled) ? 'var(--bold)' : 'var(--regular)'};
+    font-weight: ${props => (props.focused || props.filled ? 'var(--bold)' : 'var(--regular)')};
     line-height: 16px;
     transition: all 0.3s var(--ease-in-out);
 
@@ -83,11 +80,11 @@ export default styled.div`
     }
 
     &::before {
-      left: ${props => (props.focused || props.filled) ? 'var(--space-sm)' : 0};
+      left: ${props => (props.focused || props.filled ? 'var(--space-sm)' : 0)};
     }
 
     &::after {
-      right: ${props => (props.focused || props.filled) ? 'var(--space-sm)' : 0};
+      right: ${props => (props.focused || props.filled ? 'var(--space-sm)' : 0)};
     }
   }
 
@@ -108,11 +105,11 @@ export default styled.div`
 
   .error {
     position: absolute;
-    visibility: ${props => props.error ? 'visible' : 'hidden'};
-    top: ${props => props.error ? '40px' : 0};
+    visibility: ${props => (props.error ? 'visible' : 'hidden')};
+    top: ${props => (props.error ? '40px' : 0)};
     left: var(--space-xs);
     font-size: var(--font-xs);
-    color: ${props => props.focused ? 'var(--grey3)' : 'var(--error)'};
+    color: ${props => (props.focused ? 'var(--grey3)' : 'var(--error)')};
     font-weight: var(--regular);
     transition: all 0.3s var(--ease-in-out);
     padding-top: 2px;

@@ -21,5 +21,8 @@ stories.addDecorator(story => <Index fa={__FONT_AWESOME__}>{story()}</Index>);
 stories.add('Input', withReadme(InputReadme, props => <Input {...props} />));
 stories.add('Select', withReadme(SelectReadme, props => <Select {...props} />));
 stories.add('Checkbox', withReadme(CheckboxReadme, props => <Checkbox {...props} />));
-stories.add('CheckboxGroup', withReadme(CheckboxGroupReadme, props => <CheckboxGroup {...props} />));
+stories.add(
+  'CheckboxGroup',
+  withReadme(CheckboxGroupReadme, props => <CheckboxGroup {...props} />),
+);
 stories.add('RadioGroup', withReadme(RadioGroupReadme, props => <RadioGroup {...props} />));
