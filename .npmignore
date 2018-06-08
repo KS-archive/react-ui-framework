@@ -1,2 +1,10 @@
-.babelrc
 src
+docs
+demo
+.babelrc
+.editorconfig
+.eslintrc.json
+.package-lock.json
+yarn.lock
+gulpfile.json
+.stylelintrc

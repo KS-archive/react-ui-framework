@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { createForm } from 'react-ui-framework/services/forms';
+import { Button } from 'react-ui-framework';
 import FIELDS from './formConfig';
 import { Container } from '../../../helpers/styles';
 
@@ -17,6 +18,11 @@ export default class Form extends PureComponent {
     return (
       <Container>
         <Field name="email" />
+        <Field name="terms" />
+        <Field name="interests" />
+        <Field name="size" />
+        <Field name="sex" />
+        <Button label="Submit" onClick={this.props.handleSubmit(this.onSubmit)} style={{ marginTop: 16 }} />
       </Container>
     );
   }

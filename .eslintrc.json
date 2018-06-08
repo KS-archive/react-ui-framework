@@ -17,6 +17,7 @@
     "react/forbid-prop-types": "off",
     "object-curly-newline": "off",
     "no-nested-ternary": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "array-callback-return":"off"
   }
 }

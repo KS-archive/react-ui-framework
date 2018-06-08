@@ -11,7 +11,9 @@ const babelConfig = {
   presets: [
     '@babel/preset-react',
     '@babel/preset-env',
-    '@babel/preset-stage-0',
+    ['@babel/preset-stage-0', {
+      decoratorsLegacy: true,
+    }],
   ],
   plugins: [
     'transform-class-properties',
@@ -23,26 +25,26 @@ const babelConfig = {
 };
 
 gulp.task('transpile-js', () =>
-  gulp.src('./lib/**/*.js')
+  gulp.src('./src/**/*.js')
     .pipe(babel(babelConfig))
-    .pipe(gulp.dest('build')));
+    .pipe(gulp.dest('lib')));
 
 gulp.task('transpile-jsx', () =>
-  gulp.src('./lib/**/*.jsx')
+  gulp.src('./src/**/*.jsx')
     .pipe(babel(babelConfig))
-    .pipe(gulp.dest('build')));
+    .pipe(gulp.dest('lib')));
 
 gulp.task('transpile-css', () =>
-  gulp.src('./lib/**/*.css')
+  gulp.src('./src/**/*.css')
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false,
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest('build')));
+    .pipe(gulp.dest('lib')));
 
 gulp.task('transpile-scss', () =>
-  gulp.src('./lib/scss/main.scss')
+  gulp.src('./src/scss/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -50,15 +52,15 @@ gulp.task('transpile-scss', () =>
     }))
     .pipe(cleanCSS())
     .pipe(rename('styles.css'))
-    .pipe(gulp.dest('./build')));
+    .pipe(gulp.dest('./lib')));
 
-gulp.task('clean', () => del(['build/**', '!build'], { force: true }));
+gulp.task('clean', () => del(['lib/**', '!lib'], { force: true }));
 
 gulp.task('default', gulpsync.sync(['clean', ['transpile-js', 'transpile-jsx', 'transpile-css', 'transpile-scss'], 'watch']));
 
 gulp.task('watch', () => {
-  gulp.watch('./lib/**/*.js', ['transpile-js']);
-  gulp.watch('./lib/**/*.jsx', ['transpile-jsx']);
-  gulp.watch('./lib/**/*.scss', ['transpile-scss']);
-  gulp.watch('./lib/**/*.css', ['transpile-css']);
+  gulp.watch('./src/**/*.js', ['transpile-js']);
+  gulp.watch('./src/**/*.jsx', ['transpile-jsx']);
+  gulp.watch('./src/**/*.scss', ['transpile-scss']);
+  gulp.watch('./src/**/*.css', ['transpile-css']);
 });
