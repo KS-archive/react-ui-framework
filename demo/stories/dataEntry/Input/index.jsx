@@ -26,7 +26,6 @@ export default () => (
             name={text('name', 'email')}
             style={object('style', {})}
             type={select('type', types, 'text')}
-            value={text('value', '')}
           />
         </Flexbox>
       </Section>

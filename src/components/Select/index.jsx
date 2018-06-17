@@ -26,7 +26,7 @@ class Select extends PureComponent {
     this.props.onBlur();
   };
 
-  handleChange = (option) => {
+  handleChange = option => {
     const value = option ? option.value : null;
     this.setState({ value, filled: value && value.length > 0 });
     this.props.onChange(value);
@@ -38,27 +38,17 @@ class Select extends PureComponent {
       handleChange,
       handleFocus,
       state: { filled, focused, pristine, value },
-      props: {
-        autoBlur,
-        autoFocus,
-        className,
-        clearable,
-        error,
-        label,
-        name,
-        items,
-        searchable,
-        style,
-      },
+      props: { className, isClearable, error, label, name, items, isSearchable, style },
     } = this;
+    const selectValue = filled && items.filter(item => item.value === value)[0];
 
     return (
       <InputWrapper
-        focused={focused}
-        filled={filled}
-        error={error}
-        pristine={pristine}
         className={className}
+        error={error}
+        filled={filled}
+        focused={focused}
+        pristine={pristine}
         style={style}
       >
         <div className="border">
@@ -66,17 +56,16 @@ class Select extends PureComponent {
         </div>
         <label htmlFor={label}>{label}</label>
         <StyledSelect
-          autoBlur={autoBlur}
-          autoFocus={autoFocus}
-          clearable={clearable}
+          classNamePrefix="ruf"
+          isClearable={isClearable}
           name={name}
-          value={value}
-          placeholder=""
-          onChange={handleChange}
           onBlur={handleBlur}
+          onChange={handleChange}
           onFocus={handleFocus}
           options={items}
-          searchable={searchable}
+          placeholder=""
+          isSearchable={isSearchable}
+          value={selectValue}
         />
         <div className="error">{error}</div>
       </InputWrapper>
@@ -85,38 +74,36 @@ class Select extends PureComponent {
 }
 
 Select.propTypes = {
-  autoBlur: PropTypes.bool,
-  autoFocus: PropTypes.bool,
   className: PropTypes.string,
-  clearable: PropTypes.bool,
+  isClearable: PropTypes.bool,
   error: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-  })),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }),
+  ),
   pristine: PropTypes.bool,
-  searchable: PropTypes.bool,
+  isSearchable: PropTypes.bool,
   style: PropTypes.object,
   value: PropTypes.string,
 };
 
 Select.defaultProps = {
-  autoBlur: true,
-  autoFocus: false,
   className: '',
-  clearable: true,
+  isClearable: true,
   error: '',
   onFocus: () => {},
   onBlur: () => {},
   onChange: () => {},
   items: [],
   pristine: true,
-  searchable: false,
+  isSearchable: false,
   style: {},
   value: '',
 };

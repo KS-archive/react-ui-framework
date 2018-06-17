@@ -106,43 +106,31 @@ export const StyledSelect = styled(Select)`
   width: 100%;
   height: 100%;
 
-  .Select-control {
-    background-color: transparent !important;
-    border: none !important;
+  > div {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .ruf__control {
     height: 100%;
-    box-shadow: none !important;
   }
 
-  .Select-placeholder {
-    display: none;
+  .ruf__value-container {
+    padding: 0 0 0 var(--space-md);
   }
+`;
 
-  .Select-input {
-    height: 100%;
-    padding-left: var(--space-md);
-    background-color: transparent !important;
-
-    > input {
-      color: var(--grey2);
-      padding: 0;
-      height: 100%;
-    }
-  }
-
-  .Select-value {
-    padding-top: 1px;
-    line-height: 40px !important;
-    padding-left: var(--space-md) !important;
-  }
-
-  .Select-clear {
-    padding-top: 3px;
-  }
-
-  .Select-option {
-    color: var(--grey2);
-    font-size: var(--font-md);
-    line-height: 20px;
-    padding: 0 6px;
-  }
+export const Option  = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 6px;
+  font-size: var(--font-md);
+  line-height: 20px;
+  color: ${props => props.isFocused ? 'var(--primary2)' : 'var(--grey2)'};
+  border-left: 2px solid ${props => props.isFocused ? 'var(--primary2)' : 'transparent'};
+  transition: all 0.225s var(--ease-in-out);
 `;
