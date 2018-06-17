@@ -17,5 +17,5 @@
 |---------------|---------|------------------|------------------------------------------------------------|
 | className     | string  | ```''```				 | Class added to the main component. 	                      |
 | {size}        | number  | ```1``` 		     | Width of the item. Can receive values from 1 to 12         |
-| {size}-offset | number  | ```0``` 		     | Move columns to the right by specified number of columns.	|
+| {size}-offset | number  | ```0``` 		     | Move column to the right by specified number of columns.	|
 | style 		    | object  | ```{}``` 	       | Additional styles for the main component.                  |
