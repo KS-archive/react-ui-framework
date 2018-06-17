@@ -50,8 +50,8 @@ export const StyledDialog = styled.div`
 export const CloseButton = styled.div`
   cursor: pointer;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: var(--space-md);
+  right: var(--space-md);
   font-size: var(--font-sm);
   color: var(--text3);
   font-weight: var(--fa-light);

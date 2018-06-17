@@ -15,22 +15,26 @@ const SimpleDialog = ({
   animationType,
   buttons,
   children,
+  className,
   color,
   duration,
   icon,
   onClose,
   showCloseButton,
   size,
+  style,
   title,
   width,
 }) => (
   <StyledDialog
+    className={className}
     width={width}
     duration={duration}
     animationName={animationName}
     animationType={animationType}
     color={color}
     overSize={window.innerHeight < size.height + 80}
+    style={style}
   >
     {showCloseButton && <CloseButton className="fa fa-times" onClick={onClose} />}
     <Header>

@@ -1,0 +1,19 @@
+# Modal
+
+| Name            | Type      | Default value           | Description                                                                                                                                                                     |
+|-----------------|-----------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **children** 	  | node 	    | -				                | Content of the modal.	                                                                                                                                                          |
+| **onClose** 	  | func 	    | -				                | Function invoked to close the modal.	                                                                                                                                          |
+| **title** 	    | string 	  | -				                | Title displayed at the top of modal window.	                                                                                                                                    |
+| buttons 	      | array 	  | ```[]```				        | Array of objects, which will be converted into buttons in the footer of modal. Object keys are same as props of Button component.	                                              |
+| className 	    | string 	  | ```''```                | Class added to the modal component. 	                                                                                                                                          |
+| color 	        | string 	  | ```'var(--primary2)'``` | Main color of modal. Applied in icon and bar at the right of modal.	                                                                                                            |
+| duration 	      | number 	  | ```300```				        | Duration of modal opening and closing animation.	                                                                                                                              |
+| enterAnimation 	| string 	  | ```'fade'```				    | Entering animation. One of: ```'fade'```, ```'zoom'```, ```'slideDown'```, ```'slideLeft'```, ```'slideRight'```, ```'slideUp'```, ```'flip'```, ```'rotate'```, ```'door'```.	|
+| icon 	          | string 	  | ```''```				        | Path to the file with SVG icon.	                                                                                                                                                |
+| leaveAnimation 	| string 	  | ```'fade'```				    | Leaving animation. One of: ```'fade'```, ```'zoom'```, ```'slideDown'```, ```'slideLeft'```, ```'slideRight'```, ```'slideUp'```, ```'flip'```, ```'rotate'```, ```'door'```.	  |
+| onAnimationEnd 	| func 	    | ```() => {}```				  | Function invoked when animation ends.	                                                                                                                                          |
+| showCloseButton | bool 	    | ```true```				      | Determine showing 'X' button at top right corner of the modal.	                                                                                                                |
+| style           | object 	  | ```{}```	  			      | Additional styles for the modal component.	                                                                                                                                    |
+| visible 	      | bool 	    | ```false```				      | Determine if modal is visible.§	                                                                                                                                                |
+| width 	        | number 	  | ```456```				        | Maximum width of the modal window.	                                                                                                                                            |

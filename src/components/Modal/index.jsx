@@ -55,9 +55,9 @@ class Modal extends PureComponent {
   render() {
     const {
       props: {
-        animation,
         buttons,
         children,
+        className,
         color,
         duration,
         enterAnimation,
@@ -65,13 +65,14 @@ class Modal extends PureComponent {
         leaveAnimation,
         onClose,
         showCloseButton,
+        style,
         title,
         width,
       },
       state: { animationType, isShow },
     } = this;
     const animationName =
-      (animationType === 'enter' ? enterAnimation : leaveAnimation) || animation;
+      (animationType === 'enter' ? enterAnimation : leaveAnimation);
 
     return (
       <Container
@@ -93,6 +94,7 @@ class Modal extends PureComponent {
           }}
         >
           <SimpleDialog
+            className={className}
             width={width}
             duration={duration}
             animationName={animationName}
@@ -103,6 +105,7 @@ class Modal extends PureComponent {
             icon={icon}
             title={title}
             buttons={buttons.reverse()}
+            style={style}
           >
             {children}
           </SimpleDialog>
@@ -113,32 +116,34 @@ class Modal extends PureComponent {
 }
 
 Modal.propTypes = {
-  animation: PropTypes.string,
-  buttons: PropTypes.array,
+  buttons: PropTypes.arrayOf(PropTypes.object),
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   color: PropTypes.string,
   duration: PropTypes.number,
-  enterAnimation: PropTypes.string,
+  enterAnimation: PropTypes.oneOf(['fade', 'zoom', 'slideDown', 'slideLeft', 'slideRight', 'slideUp', 'flip', 'rotate', 'door']),
   icon: PropTypes.string,
-  leaveAnimation: PropTypes.string,
+  leaveAnimation: PropTypes.oneOf(['fade', 'zoom', 'slideDown', 'slideLeft', 'slideRight', 'slideUp', 'flip', 'rotate', 'door']),
   onAnimationEnd: PropTypes.func,
   onClose: PropTypes.func.isRequired,
   showCloseButton: PropTypes.bool,
+  style: PropTypes.object,
   title: PropTypes.string.isRequired,
   visible: PropTypes.bool,
   width: PropTypes.number,
 };
 
 Modal.defaultProps = {
-  animation: 'fade',
   buttons: [],
+  className: '',
   color: 'var(--primary2)',
   duration: 300,
-  enterAnimation: '',
+  enterAnimation: 'fade',
   icon: '',
-  leaveAnimation: '',
+  leaveAnimation: 'fade',
   onAnimationEnd: () => {},
   showCloseButton: true,
+  style: {},
   visible: false,
   width: 456,
 };
