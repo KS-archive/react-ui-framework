@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "@dr-kobros/react-webfont-loader": "^8.0.0",
+    "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "query-string": "^6.1.0",
     "ramda": "^0.25.0",
