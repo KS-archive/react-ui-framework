@@ -14,6 +14,7 @@ function loadStories() {
   require('../stories/dataDisplay');
   require('../stories/feedback');
   require('../stories/services');
+  require('../stories/navigation');
 }
 
 configure(loadStories, module);
