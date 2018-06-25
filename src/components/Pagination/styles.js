@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
 `;
-export const Page = styled.div`
+export const Page = styled.a`
   width: 25px;
   height: 25px;
   margin: 2px;
@@ -17,7 +17,7 @@ export const Page = styled.div`
   font-family: Roboto;
   text-align: center;
   color: white;
-
+  text-decoration: none;
   &:hover {
     color:pink;
     border: 1px solid pink;

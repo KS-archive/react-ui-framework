@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Page, Label, a } from './styles';
+import { Container, Page, Label } from './styles';
 
 class Pagination extends PureComponent{
     
@@ -14,23 +14,25 @@ class Pagination extends PureComponent{
     }
 
     componentDidMount(){
-        var index = 1,
-            array1 = [];
+    var index = 1,
+        array1 = [];
     while( index<=this.props.pageCount)
         {
-           array1.push(<Page key={index}>{index}</Page>);
+           array1.push(<Page  href={index} target="_blank">{index}</Page>);
              console.log({index});
           index++;
         }
        this.setState({array: array1})
     }
 
+
     render(){
         return (
-        <Container pageCount={this.props.pageCount}>
-                <Label previousLabel={this.props.previousLabelClass}><i class="fas fa-arrow-left"></i></Label>
+        <Container pageCount={this.props.pageCount}
+        >
+            <Label previousLabel={this.props.previousLabelClass}><i class="fas fa-arrow-left"></i></Label>
               {this.state.array}
-                <Label nextLabelClass={this.props.nextLabelClass}><i class="fas fa-arrow-right"></i> </Label>
+            <Label nextLabelClass={this.props.nextLabelClass}><i class="fas fa-arrow-right"></i> </Label>
         </Container>
     );
     }
