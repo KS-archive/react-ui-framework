@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   padding: 0;
   display: flex;
   align-items: center;
+  color: white;
 `;
 
 export const Circle = styled.div`

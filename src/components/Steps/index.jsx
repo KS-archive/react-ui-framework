@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { Wrapper, Circle, Rectangle } from './styles';
 
@@ -16,11 +15,24 @@ class Steps extends Component {
   renderCircle() {
     return <Circle />;
   }
+  renderRectangle() {
+    return <Rectangle />;
+  }
+  renderSth = () => {
+    let fig = [];
+    for (let i = 0; i < this.state.amount; i++) {
+      fig.push(<Circle />);
+      if (i < this.state.amount - 1) {
+        fig.push(<Rectangle />);
+      }
+    }
+    return fig.map(el => el);
+  }
 
   render() {
     return (
       <Wrapper>
-        {_.times(this.state.amount, this.renderCircle)}
+        {this.renderSth()}
       </Wrapper>
     );
   }
