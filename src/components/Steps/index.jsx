@@ -9,19 +9,13 @@ class Steps extends Component {
     // const { amount } = this.props;
 
     this.state = {
-      amount: 3,
+      amount: 4,
     };
-  }
-  renderCircle() {
-    return <Circle />;
-  }
-  renderRectangle() {
-    return <Rectangle />;
   }
   renderSth = () => {
     let fig = [];
     for (let i = 0; i < this.state.amount; i++) {
-      fig.push(<Circle />);
+      fig.push(<Circle>{i}</Circle>);
       if (i < this.state.amount - 1) {
         fig.push(<Rectangle />);
       }

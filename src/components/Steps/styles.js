@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   padding: 0;
   display: flex;
   align-items: center;
-  color: white;
 `;
 
 export const Circle = styled.div`
@@ -13,10 +12,12 @@ export const Circle = styled.div`
   height: 44px;
   border: 2px solid #2F80ED;
   border-radius: 50%;
-  line-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
-  color: #2F80ED; 
-  text-align: center;
+  color: #2F80ED;
+  font-family: Roboto;
 `;
 
 export const Rectangle = styled.div`
