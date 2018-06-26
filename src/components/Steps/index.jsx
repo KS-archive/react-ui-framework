@@ -6,14 +6,12 @@ class Steps extends Component {
   constructor(props) {
     super(props);
 
-    // const { amount } = this.props;
-
     this.state = {
-      amount: 4,
+      amount: this.props.amount,
     };
   }
   renderSth = () => {
-    let fig = [];
+    const fig = [];
     for (let i = 0; i < this.state.amount; i++) {
       fig.push(<Circle>{i}</Circle>);
       if (i < this.state.amount - 1) {
@@ -33,7 +31,7 @@ class Steps extends Component {
 }
 
 Steps.propTypes = {
-  // className: PropTypes.string,
+  amount: PropTypes.number.isRequired,
 };
 
 export default Steps;
