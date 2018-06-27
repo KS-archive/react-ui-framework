@@ -8,8 +8,16 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
 `;
+export const PageContainer = styled.div`
 
-export const Page = styled.a`
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+export const PageDisabled = styled.a`
   width: 25px;
   height: 25px;
   margin: 2px;
@@ -19,6 +27,9 @@ export const Page = styled.a`
   text-align: center;
   color: #E0E0E0;
   text-decoration: none;
+  border: 1px solid none;
+  border-radius: 4px;
+
   &:hover {
     color:#2F80ED;
     border: 1px solid #2F80ED;
@@ -51,8 +62,9 @@ export const Label = styled.button`
   color: #E0E0E0;
   background: none;
   border: none;
-  &:active {
-      color: #E0E0E0;
+  transition: all 0.7s ease-in-out;
+  &:hover{
+      color: #2F80ED;
   }
 `;
 

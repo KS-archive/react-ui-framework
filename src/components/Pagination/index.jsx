@@ -1,82 +1,75 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Page, Label, PageActive, PageContainer} from './styles';
+import { Container, Label, PageActive, PageDisabled } from './styles';
+// import {Page} from '../Page/index';
+
 
 class Pagination extends PureComponent{
     
     constructor(props) {
         super(props);
         this.state = {
-             array: [],
-             currentPage: 1
+             currentPage: 1,
          }
     this.createArray = this.createArray.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
+    // this.goToPage = this.goToPage.bind(this);
     }
 
-    // goToPage(index){
-    //     if (index == this.state.currentPage) {
-    //       <PageActive href={index} target="_blank">{index}</PageActive>;
-    //     } 
-    //     else {
-    //       <Page href={index} target="_blank">{index}</Page>);
-    //     }
-    // }
-
-    createArray(){
+    createArray(currentPage){
         var index = 1,
-            array1 = [];
+            array= [];
         while (index <= this.props.pageCount) {
-            if (index == this.state.currentPage){
-                array1.push(<PageActive href={index} target="_blank">{index}</PageActive>);
-            } 
-            else {
-                array1.push(<Page href={index} target="_blank">{index}</Page>);
+            if(index == currentPage){
+               array.push(<PageActive id={index} href={index} target="_blank">{index}</PageActive>);
+            }
+            else{
+                array.push(<PageDisabled  id={index} href={index} target="_blank">{index}</PageDisabled>);
             }
             index++;
         }
-        this.setState({ array: array1 })
+        return array;
     }
 
     nextPage(){
+        
         if(this.state.currentPage<this.props.pageCount){
              this.setState({currentPage: this.state.currentPage + 1});
         }
-        else {
-            this.setState({ currentPage: this.state.currentPage });
-        } 
+        this.createArray(this.state.currentPage);
     }
     previousPage(){
         if(this.state.currentPage>1){
              this.setState({currentPage: this.state.currentPage - 1});
         }
-        else {
-            this.setState({ currentPage: this.state.currentPage });
-        } 
+        this.createArray(this.state.currentPage);
     }
-
+ 
     componentDidMount(){
-        this.createArray();
+        this.createArray(this.state.currentPage);
     }
-    // componentDidUpdate(){
-    //     this.createArray();
+    // shouldComponentUpdate(nextProps, nextState){
+    //     let shouldUpdate = this.state.status !== nextState.status;
+    //     return shouldUpdate;
     // }
-    
-
+    // componentWillUpdate(prevState){
+    //     if(prevState.data != this.state.data){
+    //         this.createArray();
+    //         console.log('I did updated!');
+    //     }
+    // }
+ 
     render(){
         return (
-        <Container 
-                   pageCount={this.props.pageCount}
-        >
+        <Container pageCount={this.props.pageCount}>
             <Label previousLabel={this.props.previousLabelClass}
                    onClick={this.previousPage}><i class="fas fa-arrow-left"></i></Label>
-        
-                {this.state.array}
-             
+                     {this.createArray(this.state.currentPage)}
             <Label nextLabelClass={this.props.nextLabelClass}
                    onClick={this.nextPage}><i class="fas fa-arrow-right"></i> </Label>
-        {this.state.currentPage}
+    
         </Container>
     );
     }
@@ -95,3 +88,5 @@ Pagination.defaultProps = {
 
 export default Pagination;
 // array = { this.createArray(this.props.pageCount) }
+{/* <Page id={index} href={index} target="_blank">{index}</Page>
+<PageActive id={index} href={index} target="_blank">{index}</PageActive> */}

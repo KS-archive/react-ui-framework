@@ -12,7 +12,7 @@ export default () => (
                 <Header style={{ color: '#fff' }}>Pagination</Header>
                 <Flexbox>
                     <Pagination
-                        pageCount={number('page count',20)}
+                        pageCount={number('page count',6)}
                         previousLabelClass={text('previous label class', '')}
                         nextLabelClass={text('next label class', '')}
                     />
