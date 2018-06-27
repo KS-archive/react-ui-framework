@@ -8,14 +8,15 @@ class Steps extends Component {
 
     this.state = {
       amount: this.props.amount,
+      step: this.props.step,
     };
   }
-  renderSth = () => {
+  renderSth = (step) => {
     const fig = [];
     for (let i = 0; i < this.state.amount; i++) {
-      fig.push(<Circle>{i}</Circle>);
+      fig.push(<Circle index={i + 1} step={step}>{i}</Circle>);
       if (i < this.state.amount - 1) {
-        fig.push(<Rectangle />);
+        fig.push(<Rectangle index={i + 1} step={step} />);
       }
     }
     return fig.map(el => el);
@@ -24,7 +25,7 @@ class Steps extends Component {
   render() {
     return (
       <Wrapper>
-        {this.renderSth()}
+        {this.renderSth(this.state.step)}
       </Wrapper>
     );
   }
@@ -32,6 +33,7 @@ class Steps extends Component {
 
 Steps.propTypes = {
   amount: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired,
 };
 
 export default Steps;
