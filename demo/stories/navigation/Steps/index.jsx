@@ -10,7 +10,7 @@ export default () => (
       <Section>
         <Header style={{ color: '#fff' }}>Steps</Header>
         <Flexbox>
-          <Steps amount={number('amount', 4)} step={number('step', 2)} />
+          <Steps amount={number('amount', 4)} step={number('step', 3)} />
         </Flexbox>
       </Section>
     </Container>

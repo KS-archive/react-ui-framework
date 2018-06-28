@@ -1,24 +1,18 @@
 import styled from 'styled-components';
 
-const getCircleBorderColor = (index, step) => {
-  if (index >= step) return 'blue';
-  else return 'gray';
-};
+const getCircleBorderColor = (index, step) =>
+  index <= step ? 'primary4' : 'grey5';
 
-const getCircleBgColor = (index, step) => {
-  if (index === step) return 'blue';
-  else return 'gray';
-};
+const getCircleBgColor = (index, step) =>
+  index === step ? 'primary4' : 'background';
 
-const getRectangleBgColor = (index, step) => {
-  if (index < step) return 'blue';
-  else return 'gray';
-};
+const getRectangleBgColor = (index, step) =>
+  index < step ? 'primary4' : 'grey5';
 
-const getFontColor = (index, step) => {
-  if (index === step) return 'white';
-  else if (index < step) return 'blue';
-  else return 'gray';
+const getFontColor = (index, step) => do {
+  if (index === step) 'white-hover';
+  else if (index < step) 'primary4';
+  else 'grey5';
 };
 
 export const Wrapper = styled.div`
@@ -34,11 +28,11 @@ export const Circle = styled.div`
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
+  font-family: Roboto;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
-  font-family: Roboto;
   ${(props) => {
     const borderColor = getCircleBorderColor(props.index, props.step);
     const bgColor = getCircleBgColor(props.index, props.step);
@@ -54,7 +48,6 @@ export const Circle = styled.div`
 export const Rectangle = styled.div`
   width: 84px;
   height: 2px;
-  background-color: #CCCCCC; 
   ${(props) => {
     const bgColor = getRectangleBgColor(props.index, props.step);
     return `
