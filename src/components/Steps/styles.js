@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 const getCircleBorderColor = (index, step) =>
-  index <= step ? 'primary4' : 'grey5';
+  index <= step ? 'primary1' : 'grey5';
 
 const getCircleBgColor = (index, step) =>
-  index === step ? 'primary4' : 'background';
+  index === step ? 'primary1' : 'background';
 
 const getRectangleBgColor = (index, step) =>
-  index < step ? 'primary4' : 'grey5';
+  index < step ? 'primary1' : 'grey5';
 
 const getFontColor = (index, step) => do {
   if (index === step) 'white-hover';
-  else if (index < step) 'primary4';
+  else if (index < step) 'primary1';
   else 'grey5';
 };
 

@@ -3,29 +3,26 @@ import PropTypes from 'prop-types';
 import { Wrapper, Circle, Rectangle } from './styles';
 
 class Steps extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    amount: this.props.amount,
+    step: this.props.step,
+  };
 
-    this.state = {
-      amount: this.props.amount,
-      step: this.props.step,
-    };
-  }
-  renderSth = (step) => {
-    const fig = [];
+  renderSteps = (step) => {
+    const figure = [];
     for (let i = 0; i < this.state.amount; i++) {
-      fig.push(<Circle index={i + 1} step={step}>{i + 1}</Circle>);
+      figure.push(<Circle index={i + 1} step={step}>{i + 1}</Circle>);
       if (i < this.state.amount - 1) {
-        fig.push(<Rectangle index={i + 1} step={step} />);
+        figure.push(<Rectangle index={i + 1} step={step} />);
       }
     }
-    return fig.map(el => el);
+    return figure;
   }
 
   render() {
     return (
       <Wrapper>
-        {this.renderSth(this.state.step)}
+        {this.renderSteps(this.state.step)}
       </Wrapper>
     );
   }
