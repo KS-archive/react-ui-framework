@@ -1,23 +1,22 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": ["last", "plugin:prettier/recommended", "prettier/react", "eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["prettier", "react"],
   "parserOptions": {
-    "allowImportExportEverywhere": true
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "globals": {
-    "window": true,
-    "document": true,
-    "fetch": false,
-    "localStorage": false
+  "env": {
+    "amd": true,
+    "browser": true,
+    "node": true,
+    "es6": true
   },
   "rules": {
-    "jsx-a11y/href-no-hash": "off",
-    "no-confusing-arrow": "off",
-    "jsx-a11y/label-has-for": "off",
-    "react/forbid-prop-types": "off",
-    "object-curly-newline": "off",
-    "no-nested-ternary": "off",
-    "import/no-extraneous-dependencies": "off",
-    "array-callback-return":"off"
+    "prettier/prettier": "error",
+    "no-console": "off"
   }
 }
