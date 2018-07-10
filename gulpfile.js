@@ -13,6 +13,7 @@ const babelConfig = {
     '@babel/preset-env',
     ['@babel/preset-stage-0', {
       decoratorsLegacy: true,
+      pipelineProposal: 'minimal'
     }],
   ],
   plugins: [
