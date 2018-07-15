@@ -13,6 +13,7 @@ function loadStories() {
   require('../stories/dataEntry');
   require('../stories/dataDisplay');
   require('../stories/feedback');
+  require('../stories/navigation');
   require('../stories/services');
 }
 

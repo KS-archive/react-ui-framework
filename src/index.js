@@ -13,3 +13,4 @@ export SVGIcon from './components/SVGIcon';
 export Checkbox from './components/Checkbox';
 export CheckboxGroup from './components/CheckboxGroup';
 export RadioGroup from './components/RadioGroup';
+export Sidebar from './components/Sidebar';
