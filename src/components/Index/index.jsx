@@ -6,7 +6,6 @@ import NotificationsSystem from 'reapop';
 
 import 'react-tippy/dist/tippy.css';
 import 'react-select/dist/react-select.css';
-import '../../styles.css';
 
 import getFontAwesome from './getFontAwesome';
 import theme from '../../services/notifications/theme';
