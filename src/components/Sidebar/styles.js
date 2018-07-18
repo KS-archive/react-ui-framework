@@ -8,6 +8,35 @@ import styled from 'styled-components';
 //   else kind;
 // };
 
-// export const Filled = styled.div`
-//
-// `;
+export const Container = styled.div`
+  width: 48px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+`;
+
+export const Hamburger = styled.div`
+  margin-top: 16px;
+`;
+
+export const Arrow = styled.div`
+  display: none;
+`;
+
+export const Links = styled.div`
+  
+`;
+
+export const Link = styled.div`
+  // margin-top: 16px;
+`;
+
+export const Icon = styled.div`
+  margin-top: 18px;
+`;
+
+export const Label = styled.div`
+  display: none;
+`;
