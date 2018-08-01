@@ -15,7 +15,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  box-shadow: 0 0 8px lightgray;
   color: var(--grey1)
 `;
 
@@ -23,7 +23,7 @@ export const Hamburger = styled.div`
   margin-top: 16px;
 `;
 
-export const Arrow = styled.div`
+export const HidingArrow = styled.div`
   display: none;
 `;
 
@@ -38,6 +38,14 @@ export const Item = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--grey1);
+  
+  &:hover,
+  &:active {
+    color: var(--primary1);
+    border-left: 2px solid var(--primary1);
+    width: 46px;
+  }
 `;
 
 export const Icon = styled.div`
